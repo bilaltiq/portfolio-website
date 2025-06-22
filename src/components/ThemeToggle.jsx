@@ -6,22 +6,23 @@ export const ThemeToggle = () => {
   const [isDarkMode, setIsDarkMode] = useState(true);
 
   useEffect(() => {
-    const storedTheme = localStorage.getItem("theme");
+    let storedTheme = localStorage.getItem("theme");
+    if (!storedTheme) {
+      // default to dark mode
+      storedTheme = "dark";
+      localStorage.setItem("theme", "dark");
+    }
+    setIsDarkMode(storedTheme === "dark");
     if (storedTheme === "dark") {
-      setIsDarkMode(true);
       document.documentElement.classList.add("dark");
     } else {
-      localStorage.setItem("theme", "light");
-      setIsDarkMode(false);
+      document.documentElement.classList.remove("dark");
     }
   }, []);
 
   const toggleTheme = () => {
     const root = document.documentElement;
-
     root.classList.add("transition-opacity", "duration-300", "opacity-0");
-
-    // fading transition
     setTimeout(() => {
       if (isDarkMode) {
         root.classList.remove("dark");
@@ -30,12 +31,9 @@ export const ThemeToggle = () => {
         root.classList.add("dark");
         localStorage.setItem("theme", "dark");
       }
-
-      // Fade back in
       setTimeout(() => {
         root.classList.remove("opacity-0");
       }, 50);
-
       setIsDarkMode(!isDarkMode);
     }, 100);
   };
