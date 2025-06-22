@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { cn } from "@/lib/utils";
 
 export const ThemeToggle = () => {
-  const [isDarkMode, setIsDarkMode] = useState(false);
+  const [isDarkMode, setIsDarkMode] = useState(true);
 
   useEffect(() => {
     const storedTheme = localStorage.getItem("theme");
@@ -48,11 +48,11 @@ export const ThemeToggle = () => {
         "transition-colors duration-300 focus:outline-hidden"
       )}
     >
-      {isDarkMode ? (
+      {/* {isDarkMode ? (
         <Sun className="h-6 w-6 text-white-300" />
       ) : (
         <Moon className="h-6 w-6 text-purple-800" />
-      )}
+      )} */}
     </button>
   );
 };
