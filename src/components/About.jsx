@@ -1,4 +1,4 @@
-import { Code } from "lucide-react"
+import { Code, GraduationCap } from "lucide-react"
 
 export const About = () => {
     return (
@@ -10,12 +10,22 @@ export const About = () => {
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
                 <div className="space-y-6">
-                    <h3 className="text-2xl font-semibold"> Computer Science and Mathematics @ Amherst College </h3>
+                    <span className="flex justify-center space-x-4">
+                    <GraduationCap size={35} className="text-primary" />
+                    </span>
+                    <h3 className="text-2xl font-semibold flex justify-center mb-0.5">  
+                        <span>Amherst College</span>   
+                    </h3>
+                    <p className="text-center italic text-muted-foreground mb-3">
+                        Expected Graduation - May 2027
+                    </p>
 
-                    <p className="text-muted-foreground"> Over 5 years of experience in web dev, I specialize in creating responsive, accessible and performant web applications using modern technologies </p>
+                    <p className="text-muted-foreground siz"> 
+                        Computer Science & Math Double Major
+                    </p>
 
                     <p className="text-muted foreground">
-                        Passionate about creating elegant solutions to complex problems, and I'm constantly learning new technologies and techniques to stay at the forefront of the ever-evolving web landscape.
+                        I'm a machine learning and visual computing enthusiast with a passion for building software that bridges technology and creativity. From AI-driven 3D modelling to customer-centric web applications, this site showcases some of my projects, experiments and thoughts as I continue to work at the intersection of code, design and ML.
                     </p>
 
                     <div className="flex flex-col sm:flex-row gap-4 pt4 justify-center">

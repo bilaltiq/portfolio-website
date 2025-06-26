@@ -78,6 +78,7 @@
   .dark {
     --background: 280 40% 6%;
     --foreground: 213 31% 91%;
+    --muted-foreground: 213 10% 60%;
 
     --card: 222 47% 8%;
 
@@ -125,6 +126,11 @@
 @utility text-glow {
   @apply relative;
   text-shadow: 0 0 10px rgba(167, 139, 250, 0.5);
+}
+
+@utility text-muted-foreground {
+  @apply relative;
+  color: hsl(var(--muted-foreground));
 }
   
 @utility card-hover {
