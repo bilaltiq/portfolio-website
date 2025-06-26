@@ -57,8 +57,8 @@ export const Contact = () => {
                             </div>
                         </div>
 
-                        <div className="flex items-start space-x-4 justify-center">
-                            <div className="p-3 rounded-full bg-primary/10">
+                        <div className="flex flex-col items-center justify-center">
+                            <div className="p-3 rounded-full bg-primary/10 mb-1">
                                 <a href="https://www.instagram.com/mbtoshq/" target="_blank"><Instagram className="h-6 w-6 text-primary"/> </a>
                             </div>
                             <div>
