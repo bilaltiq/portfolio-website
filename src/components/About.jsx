@@ -77,5 +77,6 @@ export const About = () => {
             </div>
         </div>
     </section>
+    
     )
 }

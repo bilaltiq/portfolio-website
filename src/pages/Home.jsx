@@ -6,6 +6,7 @@ import { About } from "../components/About"
 import { Projects } from "../components/Projects"
 import { Contact } from "../components/Contact"
 import { Footer }  from "../components/Footer"
+import { TechStack } from "../components/TechStack"
 
 
 export const Home = () => {
@@ -22,6 +23,7 @@ export const Home = () => {
         <main>
             <HeroSection />
             <About />
+            <TechStack />
             <Projects />
             <Contact />
         </main>

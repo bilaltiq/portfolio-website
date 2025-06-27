@@ -1,4 +1,4 @@
-import { GitBranchIcon, Github, Link } from "lucide-react";
+import { Github, Link } from "lucide-react";
 import GAT from "../assets/GAT.png";
 import noonFS from "../assets/noonFS.png"
 import Crevasse from "../assets/Crevasse.png"
@@ -24,8 +24,7 @@ const projects = [
         description: "A machine learning project using a UNet architecture to automatically identify and segment crevasses in Antarctic satellite imagery, aiding glaciological research and safety",
         tags: ["Python", "TensorFlow", "Keras", "Jupyter", "Matplotlib", "NumPy"],
         githubURL: "https://github.com/bilaltiq/UNet-Crevasse-Identifier"
-        //demoURL: "#"
-        // add github url / demoURL later
+    
     },
     {
         id: 3,
@@ -35,8 +34,7 @@ const projects = [
         description: "A file system built from the ground up through a custom Kernel, BIOS and Memory Management system",
         tags: ["Assembly (RISC-V)", "C"],
         githubURL: "https://github.com/bilaltiq/NoonFS"
-        //demoURL: "#"
-        // add github url / demoURL later
+  
     },
     {
         id: 4,
@@ -46,8 +44,7 @@ const projects = [
         description: "A website helping customers design their apartment with furniture before they buy",
         tags: ["React", "Typescript", "Babylon", "NextJS", "TailwindCSS", "Firebase"],
         githubURL: "https://layout--layout-58451.us-central1.hosted.app/design/1qX1j05ZFqYuvUol8uCI"
-        //demoURL: "#"
-        // add github url / demoURL later
+
     },
     {
         id: 5,
@@ -57,8 +54,7 @@ const projects = [
         description: "A fully functional Neural Network built from the ground up with no external libraries; detects MNIST digits",
         tags: ["Java"],
         githubURL: "https://github.com/bilaltiq/JavaNeuralNetwork"
-        //demoURL: "#"
-        // add github url / demoURL later
+     
     },
     {
         id: 6,
@@ -68,8 +64,7 @@ const projects = [
         description: "Explore an infinite procedurally generated universe as try to find the mythical planet of Goldilocks",
         tags: ["Java"],
         githubURL: "https://github.com/sergleonov/goldilocksgame"
-        //demoURL: "#"
-        // add github url / demoURL later
+
     },
 ];
 
