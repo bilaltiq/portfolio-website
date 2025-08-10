@@ -50,12 +50,14 @@ export const About = () => {
                    <span className="flex justify-center space-x-4">
                     <LucideBriefcase size={35} className="text-primary" />
                     </span>
+                    <h1>Experience</h1>
                     <div className="gradient-border p-6 card-hover">
                         
                         <div className="flex items-start gap-4">
                             <div className="p-3 rounded-full bg-primary/10">
                                 <Code className="h-6 w-6"/>
                             </div>
+                            <h1>Google Research & Brown University</h1>
                         </div>
                     </div>
                     <div className="gradient-border p-6 card-hover">
