@@ -19,7 +19,7 @@ export const HeroSection = () => {
     <p className="text-md md:text-lg text-muted-foreground max-w-2xl mx-auto">
       Visual Computing. Machine Learning. Driven by Design.
     </p>
-    <div className="pt-4 opacity-0 animate-fade-in-delay-4">
+    <div className="pt-4 opacity-0 animate-fade-in-delay-4 -mt-3 mb-1">
       <a href="#projects" className="cosmic-button animate-float">
         View My Work
       </a>
