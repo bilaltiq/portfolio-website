@@ -59,8 +59,8 @@ export const About = () => {
                             </div>
 
                             <div>
-                                <h1 className="font-semibold">Google Research & Brown University</h1>
-                                <ul className="list-disc list-inside text-sm text-gray-600 mt-1 space-y-1 text-left">
+                                <h1 className="font-semibold text-left">Google Research & Brown University</h1>
+                                <ul className="list-disc list-inside text-sm text-gray-600 mt-2 space-y-1 text-left">
                                     <li>Built CAD-to-sketch models with Graph Attention Networks and diffusion, 4x faster with higher accuracy.</li>
                                     <li>Led team, won Brown-Google Symposium, and preparing ISVC 2025 paper + open-source release.</li>
                                 </ul>
@@ -75,8 +75,8 @@ export const About = () => {
                             </div>
 
                             <div>
-                                <h1>Gregory S. Call SWE Intern @ Amherst College</h1>
-                                <ul className="list-disc list-inside text-sm text-gray-600 mt-1 space-y-1 text-left">
+                                <h1 className="font-semibold text-left">Gregory S. Call SWE Intern @ Amherst College</h1>
+                                <ul className="list-disc list-inside text-sm text-gray-600 mt-2 space-y-1 text-left">
                                     <li>TensorFlow UNet++ pipeline for Sentinel-1 crevasse detection, raising accuracy from 92.8% to 99.1%.</li>
                                     <li>Containerized workflow for reproducible A100 GPU cluster deployment.</li>
                                 </ul>
@@ -91,13 +91,13 @@ export const About = () => {
                             </div>
 
                             <div>
-                                <h1>Co-Founder & CTO @ Layout</h1>
-                                <ul className="list-disc list-inside text-sm text-gray-600 mt-1 space-y-1 text-left">
+                                <h1 className="font-semibold text-left">Co-Founder & CTO @ Layout</h1>
+                                <ul className="list-disc list-inside text-sm text-gray-600 mt-2 space-y-1 text-left">
                                     <li>Led development of a 3D apartment visualization platform using React, Babylon, and AWS.</li>
                                     <li>Built and managed a 4-engineer team, secured partnerships with real estate firms, and prepared for seed-round funding.</li>
                                 </ul> 
                             </div>  
-                                                 
+
                         </div>
                     </div>
                 </div>
