@@ -1,6 +1,7 @@
 import { Instagram, Linkedin, LucideLinkedin, Mail, MapPin, Send } from "lucide-react"
 import { cn } from "@/lib/utils"
 import { useToast } from "../hooks/use-toast";
+import Particles from "../components/ui/Particles";
 
 export const Contact = () => {
 
@@ -20,6 +21,19 @@ export const Contact = () => {
     return (
         <section id="contact"
         className="py-24 px-4 relative bg-secondary/30">
+
+      {/* Background Particles */}
+        <Particles
+            particleColors={['#ffffff', '#ffffff']}
+            particleCount={200}
+            particleSpread={10}
+            speed={0.1}
+            particleBaseSize={100}
+            moveParticlesOnHover={true}
+            alphaParticles={false}
+            disableRotation={false}
+        />
+
         <div className="container mx-auto max-w-5xl">
             <h2 className="text-3xl md:text-4xl font-bold mb-4 text-center">
                 Get In <span className="text-primary"> Touch</span>
