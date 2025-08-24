@@ -30,7 +30,7 @@ export const TechStack = () => {
         { name: "MySQL", description: "Database", src: sqlLogo },
         { name: "Node.js", description: "Backend Development", src: nodejsLogo },
         { name: "Tailwind", description: "Frontend Design", src: tailwindLogo },
-        { name: "JS", description: "Core Web Language", src: JSLogo },
+        { name: "JavaScript", description: "Core Web Language", src: JSLogo },
         { name: "Git", description: "well... it's Git", src: gitLogo },
       ].map((tech, index) => (
         <div
