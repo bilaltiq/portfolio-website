@@ -59,7 +59,8 @@ export const Contact = () => {
 
                         <div className="flex flex-col items-center justify-center">
                             <div className="p-3 rounded-full bg-primary/10 mb-1">
-                                <a href="https://www.instagram.com/mbtoshq/" target="_blank"><Instagram className="h-6 w-6 text-primary"/> </a>
+                                <a href="https://www.instagram.com/mbtoshq/" target="_blank">
+                                <Instagram className="h-6 w-6 text-primary hover:text-white transition-colors" /> </a>
                             </div>
                             <div>
                                 <h4 className="font-medium"> Instagram </h4>

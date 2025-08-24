@@ -1,0 +1,9 @@
+.aurora-container {
+  position: absolute; /* fixed if want it to stay on scroll */
+  top: 0;
+  left: 0;
+  width: 100vw; /* full viewport width */
+  height: 35%;
+  z-index: 0;
+  pointer-events: none; /* clicks pass through */
+}
