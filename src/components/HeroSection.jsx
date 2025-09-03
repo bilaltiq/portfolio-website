@@ -27,7 +27,7 @@ export const HeroSection = () => {
         <span className="text-glow inline-block ml-2 opacity-0 animate-fade-in-delay-2"> Tariq</span>
       </h1>
       <p className="text-md md:text-lg text-muted-foreground max-w-2xl mx-auto">
-        Visual Computing. Machine Learning. Driven by Design.
+        Software Engineering. Visual Computing. Machine Learning. Driven by Design.
       </p>
       <div className="pt-4 opacity-0 animate-fade-in-delay-4 -mt-3 mb-1">
         <a href="#projects" className="cosmic-button animate-float">
