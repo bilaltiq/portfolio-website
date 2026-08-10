@@ -1,39 +1,100 @@
-import { useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 import portrait from "../assets/portrait.jpg";
+
+/** Where the developed window rests: on the face, a little above centre. */
+const FACE = { x: 49, y: 40 };
+
+/* Snappy while the pointer is driving, slow on the way home, so leaving the
+   plate reads as the window drifting back rather than snapping. */
+const EASE_TRACKING = 0.34;
+const EASE_RETURNING = 0.055;
+const SETTLED = 0.05;
 
 /**
  * The hero's "Fig. 01" plate. A duotone portrait under a halftone dot grid,
- * with a radial window that follows the pointer and restores the full image —
- * the cursor develops the print. Pure CSS masks, no canvas.
+ * with a radial window holding the full-colour image. It rests on the face,
+ * follows the pointer across the plate, and floats back when the pointer
+ * leaves. Pure CSS masks driven by two custom properties — no canvas.
  */
 export const FigurePlate = () => {
   const ref = useRef(null);
-  const [lit, setLit] = useState(false);
+  const target = useRef({ ...FACE });
+  const pos = useRef({ ...FACE });
+  const hovering = useRef(false);
+  const frame = useRef(0);
+
+  // Custom properties can't be transitioned without @property, so the easing
+  // runs here. The loop parks itself once the window is home and idle.
+  const animate = () => {
+    const node = ref.current;
+    if (!node) return;
+
+    const ease = hovering.current ? EASE_TRACKING : EASE_RETURNING;
+    const dx = target.current.x - pos.current.x;
+    const dy = target.current.y - pos.current.y;
+    pos.current.x += dx * ease;
+    pos.current.y += dy * ease;
+
+    node.style.setProperty("--mx", `${pos.current.x.toFixed(2)}%`);
+    node.style.setProperty("--my", `${pos.current.y.toFixed(2)}%`);
+
+    if (!hovering.current && Math.abs(dx) < SETTLED && Math.abs(dy) < SETTLED) {
+      frame.current = 0;
+      return;
+    }
+    frame.current = requestAnimationFrame(animate);
+  };
+
+  const start = () => {
+    if (!frame.current) frame.current = requestAnimationFrame(animate);
+  };
+
+  useEffect(() => {
+    const node = ref.current;
+    if (!node) return;
+
+    node.style.setProperty("--mx", `${FACE.x}%`);
+    node.style.setProperty("--my", `${FACE.y}%`);
+
+    return () => {
+      if (frame.current) cancelAnimationFrame(frame.current);
+    };
+  }, []);
 
   const onPointerMove = (e) => {
     const node = ref.current;
     if (!node) return;
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+
     const rect = node.getBoundingClientRect();
-    node.style.setProperty("--mx", `${((e.clientX - rect.left) / rect.width) * 100}%`);
-    node.style.setProperty("--my", `${((e.clientY - rect.top) / rect.height) * 100}%`);
+    target.current = {
+      x: ((e.clientX - rect.left) / rect.width) * 100,
+      y: ((e.clientY - rect.top) / rect.height) * 100,
+    };
+    hovering.current = true;
+    start();
   };
 
-  const mask = `radial-gradient(circle at var(--mx, 50%) var(--my, 50%), #000 0, #000 ${
-    lit ? "16%" : "0%"
-  }, transparent ${lit ? "34%" : "0%"})`;
+  const onPointerLeave = () => {
+    hovering.current = false;
+    target.current = { ...FACE };
+    start();
+  };
+
+  const mask =
+    "radial-gradient(circle at var(--mx, 49%) var(--my, 40%), #000 0, #000 17%, transparent 36%)";
 
   return (
     <div className="flex h-full w-full flex-col">
       <div
         ref={ref}
         onPointerMove={onPointerMove}
-        onPointerEnter={() => setLit(true)}
-        onPointerLeave={() => setLit(false)}
+        onPointerLeave={onPointerLeave}
         data-cursor="Develop"
         className="relative aspect-square w-full overflow-hidden rounded-[3px] border border-border bg-muted"
-        style={{ "--mx": "50%", "--my": "50%" }}
+        style={{ "--mx": `${FACE.x}%`, "--my": `${FACE.y}%` }}
       >
-        {/* Base plate: flattened, brand-tinted. The source is pre-cropped square and
+        {/* Base plate: flattened, tinted. The source is pre-cropped square and
             framed on the face, so it needs no object-position nudging. */}
         <img
           src={portrait}
@@ -41,17 +102,18 @@ export const FigurePlate = () => {
           className="absolute inset-0 h-full w-full object-cover opacity-90 grayscale contrast-[1.15] transition-opacity duration-500"
         />
         {/* Duotone, and order matters: `color` replaces both hue and saturation,
-            so the terracotta pass has to land first or it wipes out the plum.
-            The plum then multiplies back in, biting hardest in the midtones. */}
-        <div className="absolute inset-0 bg-brand/28 mix-blend-color" />
-        <div className="absolute inset-0 bg-accent/22 mix-blend-multiply" />
+            so the brand pass has to land first or it wipes out the deeper tone.
+            That one then multiplies back in, biting hardest in the midtones. */}
+        <div className="absolute inset-0 bg-brand/20 mix-blend-color" />
+        <div className="absolute inset-0 bg-accent/12 mix-blend-multiply" />
 
-        {/* Developed window: full-contrast image revealed under the pointer */}
+        {/* Developed window: full-colour image, resting on the face until the
+            pointer takes over */}
         <img
           src={portrait}
           alt=""
           aria-hidden="true"
-          className="absolute inset-0 h-full w-full object-cover transition-[mask-image] duration-300 ease-out"
+          className="absolute inset-0 h-full w-full object-cover"
           style={{ maskImage: mask, WebkitMaskImage: mask }}
         />
 
@@ -60,8 +122,7 @@ export const FigurePlate = () => {
           aria-hidden="true"
           className="absolute inset-0 opacity-[0.35] mix-blend-overlay"
           style={{
-            backgroundImage:
-              "radial-gradient(currentColor 1px, transparent 1px)",
+            backgroundImage: "radial-gradient(currentColor 1px, transparent 1px)",
             backgroundSize: "6px 6px",
           }}
         />
