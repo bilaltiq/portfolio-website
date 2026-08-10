@@ -1,19 +1,24 @@
 import { useEffect, useState } from "react";
+import { Link, useLocation } from "react-router-dom";
 import { cn } from "@/lib/utils";
 import { ThemeToggle } from "./ThemeToggle";
 
-const navItems = [
-  { name: "Work", href: "#work" },
-  { name: "About", href: "#about" },
-  { name: "Photos", href: "#photography" },
-  { name: "Stack", href: "#stack" },
-  { name: "Contact", href: "#contact" },
+const sections = [
+  { name: "About", hash: "#about" },
+  { name: "Work", hash: "#work" },
+  { name: "Stack", hash: "#stack" },
+  { name: "Contact", hash: "#contact" },
 ];
 
+const PHOTOS = { name: "Photos", to: "/photography" };
+
 export const NavBar = () => {
+  const { pathname } = useLocation();
+  const isHome = pathname === "/";
+
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [active, setActive] = useState("#work");
+  const [active, setActive] = useState("#about");
 
   useEffect(() => {
     const onScroll = () => setIsScrolled(window.scrollY > 24);
@@ -22,12 +27,14 @@ export const NavBar = () => {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  // Highlight whichever section currently owns the upper third of the viewport.
+  // Scroll-spy only means anything on the page that owns those sections.
   useEffect(() => {
-    const sections = navItems
-      .map((item) => document.querySelector(item.href))
+    if (!isHome) return;
+
+    const nodes = sections
+      .map((item) => document.querySelector(item.hash))
       .filter(Boolean);
-    if (!sections.length) return;
+    if (!nodes.length) return;
 
     const observer = new IntersectionObserver(
       (entries) => {
@@ -39,17 +46,23 @@ export const NavBar = () => {
       { rootMargin: "-20% 0px -70% 0px" }
     );
 
-    sections.forEach((section) => observer.observe(section));
+    nodes.forEach((node) => observer.observe(node));
     return () => observer.disconnect();
-  }, []);
+  }, [isHome]);
 
-  // Don't let the page scroll behind the open mobile sheet.
   useEffect(() => {
     document.body.style.overflow = isMenuOpen ? "hidden" : "";
     return () => {
       document.body.style.overflow = "";
     };
   }, [isMenuOpen]);
+
+  // Off the home page these become real navigations, so the browser handles the
+  // hash scroll itself rather than us re-implementing it after a route change.
+  const sectionHref = (hash) => (isHome ? hash : `/${hash}`);
+  const isActive = (hash) => isHome && active === hash;
+
+  const close = () => setIsMenuOpen(false);
 
   return (
     <>
@@ -62,31 +75,45 @@ export const NavBar = () => {
         )}
       >
         <div className="container-site flex h-16 items-center justify-between md:h-20">
-          <a href="#top" className="group flex items-baseline gap-2">
+          <Link to="/" className="group flex items-baseline gap-2">
             <span className="eyebrow">Bilal Tariq</span>
             <span className="mono-label hidden transition-colors group-hover:!text-brand sm:inline">
               (NYC)
             </span>
-          </a>
+          </Link>
 
           <nav className="hidden items-center gap-8 md:flex">
-            {navItems.map((item) => (
+            {sections.map((item) => (
               <a
-                key={item.href}
-                href={item.href}
+                key={item.hash}
+                href={sectionHref(item.hash)}
                 className={cn(
                   "relative text-sm tracking-wide transition-colors duration-200",
-                  active === item.href
+                  isActive(item.hash)
                     ? "text-foreground"
                     : "text-muted-foreground hover:text-foreground"
                 )}
               >
                 {item.name}
-                {active === item.href && (
+                {isActive(item.hash) && (
                   <span className="absolute -bottom-1.5 left-0 right-0 h-[2px] bg-brand" />
                 )}
               </a>
             ))}
+
+            <Link
+              to={PHOTOS.to}
+              className={cn(
+                "relative text-sm tracking-wide transition-colors duration-200",
+                !isHome ? "text-foreground" : "text-muted-foreground hover:text-foreground"
+              )}
+            >
+              {PHOTOS.name}
+              {!isHome && (
+                <span className="absolute -bottom-1.5 left-0 right-0 h-[2px] bg-brand" />
+              )}
+            </Link>
+
             <a
               href="/Bilal-Tariq-Resume.pdf"
               target="_blank"
@@ -123,26 +150,38 @@ export const NavBar = () => {
         )}
       >
         <nav id="mobile-menu" className="container-site flex flex-col gap-6">
-          {navItems.map((item, i) => (
+          {sections.map((item, i) => (
             <a
-              key={item.href}
-              href={item.href}
-              onClick={() => setIsMenuOpen(false)}
+              key={item.hash}
+              href={sectionHref(item.hash)}
+              onClick={close}
               className="flex items-baseline gap-4 border-b border-border pb-4 text-3xl font-medium tracking-tight"
             >
-              <span className="mono-label">0{i + 1}</span>
+              <span className="mono-label">{String(i + 1).padStart(2, "0")}</span>
               {item.name}
             </a>
           ))}
+
+          <Link
+            to={PHOTOS.to}
+            onClick={close}
+            className="flex items-baseline gap-4 border-b border-border pb-4 text-3xl font-medium tracking-tight"
+          >
+            <span className="mono-label">
+              {String(sections.length + 1).padStart(2, "0")}
+            </span>
+            {PHOTOS.name}
+          </Link>
+
           <a
             href="/Bilal-Tariq-Resume.pdf"
             target="_blank"
             rel="noopener noreferrer"
-            onClick={() => setIsMenuOpen(false)}
+            onClick={close}
             className="flex items-baseline gap-4 border-b border-border pb-4 text-3xl font-medium tracking-tight"
           >
             <span className="mono-label">
-              {String(navItems.length + 1).padStart(2, "0")}
+              {String(sections.length + 2).padStart(2, "0")}
             </span>
             Resume ↗
           </a>
