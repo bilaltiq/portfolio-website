@@ -1,4 +1,5 @@
 import { Reveal } from "./Reveal";
+import { MarkWatermark } from "./MarkWatermark";
 import cad2sketch from "../assets/cad2sketch.svg";
 import amr from "../assets/amr.svg";
 import topics from "../assets/topics.svg";
@@ -125,7 +126,9 @@ const projects = [
 ];
 
 export const Projects = () => (
-  <section id="work" className="container-site pt-24 md:pt-32">
+  <section id="work" className="container-site relative pt-24 md:pt-32">
+    <MarkWatermark side="right" size="78vmin" top="6%" drift={110} />
+
     <div className="section-rule mb-8 md:mb-10">
       <h2 className="eyebrow flex items-baseline gap-3">
         selected work

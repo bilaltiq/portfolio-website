@@ -6,6 +6,7 @@ import { PageWash } from "../components/PageWash";
 import { Footer } from "../components/Footer";
 import { Reveal } from "../components/Reveal";
 import { Lightbox } from "../components/Lightbox";
+import { MarkWatermark } from "../components/MarkWatermark";
 
 /* ─────────────────────────────────────────────────────────────
    TO ADD PHOTOS: drop image files into src/assets/photography/.
@@ -162,7 +163,9 @@ export const Photography = () => {
       <NavBar />
 
       <main className="flex-1">
-        <header className="container-site pb-10 pt-28 md:pb-14 md:pt-36">
+        <header className="container-site relative pb-10 pt-28 md:pb-14 md:pt-36">
+          <MarkWatermark side="right" size="62vmin" top="4%" drift={70} />
+
           <p className="mono-label mb-6">off duty — {photos.length || "no"} frames</p>
 
           <h1 className="text-[clamp(2.8rem,11vw,9rem)] font-black leading-[0.95] tracking-[-0.04em]">
