@@ -1,51 +1,62 @@
-import pythonLogo from "../assets/python.png"
-import javaLogo from "../assets/java.png"
-import cLogo from "../assets/c.png"
-import tsLogo from "../assets/ts.png"
-import reactLogo from "../assets/react.png"
-import sqlLogo from "../assets/mysql.png"
-import nodejsLogo from "../assets/nodejs.png"
-import tailwindLogo from "../assets/tailwind.png"
-import gitLogo from "../assets/git.png"
-import JSLogo from "../assets/JS.png"
+import { Reveal } from "./Reveal";
+import pythonLogo from "../assets/python.png";
+import javaLogo from "../assets/java.png";
+import cLogo from "../assets/c.png";
+import tsLogo from "../assets/ts.png";
+import reactLogo from "../assets/react.png";
+import sqlLogo from "../assets/mysql.png";
+import nodejsLogo from "../assets/nodejs.png";
+import tailwindLogo from "../assets/tailwind.png";
+import gitLogo from "../assets/git.png";
+import JSLogo from "../assets/JS.png";
 
+const stack = [
+  { name: "Python", use: "AI & ML", src: pythonLogo },
+  { name: "Java", use: "App Development", src: javaLogo },
+  { name: "C / C++", use: "Embedded Systems", src: cLogo },
+  { name: "TypeScript", use: "Web Development", src: tsLogo },
+  { name: "React", use: "Frontend Framework", src: reactLogo },
+  { name: "MySQL", use: "Databases", src: sqlLogo },
+  { name: "Node.js", use: "Backend", src: nodejsLogo },
+  { name: "Tailwind", use: "Frontend Design", src: tailwindLogo },
+  { name: "JavaScript", use: "Core Web Language", src: JSLogo },
+  { name: "Git", use: "Well… it's Git", src: gitLogo },
+];
 
+export const TechStack = () => (
+  <section id="stack" className="container-site pt-24 md:pt-32">
+    <div className="section-rule mb-8 md:mb-10">
+      <h2 className="eyebrow flex items-baseline gap-3">
+        Tech Stack
+        <span className="mono-label">({stack.length})</span>
+      </h2>
+      <span className="mono-label">Tools of the trade</span>
+    </div>
 
-export const TechStack = () => {
-    return (
-        <section id="techstack" className="py-24 px-4 bg-background">
-  <div className="container mx-auto max-w-5xl text-center">
-    <h2 className="text-3xl md:text-4xl font-bold mb-6">
-      A <span> <a className="text-glow">Tech Stack</a></span> for Dreams
-    </h2>
-
-        <h3 className="text-muted-foreground mb-6">A glimpse into the creative process.</h3>
-    <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6 back ">
-      {[
-        { name: "Python", description: "AI & ML" , src: pythonLogo },
-        { name: "Java", description: "App Development", src: javaLogo },
-        { name: "C / C++", description: "Embedded Systems", src: cLogo },
-        { name: "Typescript", description: "Web Development", src: tsLogo },
-        { name: "React", description: "Frontend Framework", src: reactLogo },
-        { name: "MySQL", description: "Database", src: sqlLogo },
-        { name: "Node.js", description: "Backend Development", src: nodejsLogo },
-        { name: "Tailwind", description: "Frontend Design", src: tailwindLogo },
-        { name: "JavaScript", description: "Core Web Language", src: JSLogo },
-        { name: "Git", description: "well... it's Git", src: gitLogo },
-      ].map((tech, index) => (
-        <div
-          key={index}
-          className="group relative bg-muted p-6 rounded-xl shadow-md transform transition duration-300 hover:-translate-y-1 hover:shadow-xl overflow-hidden"
+    {/* Single-hairline grid: collapse the gap and let cell borders overlap */}
+    <div className="grid grid-cols-2 border-l border-t border-border sm:grid-cols-3 lg:grid-cols-5">
+      {stack.map((tech, i) => (
+        <Reveal
+          key={tech.name}
+          delay={i * 40}
+          className="group relative border-b border-r border-border p-5 transition-colors duration-300 hover:bg-muted md:p-6"
         >
-          <div className="absolute inset-0 bg-gradient-to-r from-primary/10 to-transparent blur-sm opacity-0 group-hover:opacity-100 transition duration-300" />
-          <img src={tech.src} alt={tech.name} className="h-12 mx-auto mb-2" />
-          <p className="text-sm font-medium text-foreground mb-1">{tech.name}</p>
-          <p className="text-xs font-medium text-muted-foreground">{tech.description}</p>
-        </div>
+          <span className="mono-label absolute right-3 top-3 !text-[10px] opacity-40">
+            {String(i + 1).padStart(2, "0")}
+          </span>
+          {/* Full colour rather than grayscale — several logos are near-black and
+              disappear against the dark palette once desaturated. */}
+          <img
+            src={tech.src}
+            alt=""
+            aria-hidden="true"
+            loading="lazy"
+            className="mb-4 h-8 w-8 object-contain opacity-80 transition-[opacity,transform] duration-300 group-hover:scale-105 group-hover:opacity-100 dark:brightness-110"
+          />
+          <p className="text-sm font-medium tracking-tight">{tech.name}</p>
+          <p className="mono-label mt-1 !tracking-[0.12em]">{tech.use}</p>
+        </Reveal>
       ))}
     </div>
-  </div>
-</section>
-
-    )
-}
+  </section>
+);

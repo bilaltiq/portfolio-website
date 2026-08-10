@@ -1,34 +1,25 @@
-import { ThemeToggle } from "../components/ThemeToggle"
-import { CustomBackground } from "../components/CustomBackground"
-import { NavBar } from "../components/NavBar"
-import { HeroSection } from "../components/HeroSection"
-import { About } from "../components/About"
-import { Projects } from "../components/Projects"
-import { Contact } from "../components/Contact"
-import { Footer }  from "../components/Footer"
-import { TechStack } from "../components/TechStack"
+import { NavBar } from "../components/NavBar";
+import { CustomCursor } from "../components/CustomCursor";
+import { HeroSection } from "../components/HeroSection";
+import { Ticker } from "../components/Ticker";
+import { Projects } from "../components/Projects";
+import { About } from "../components/About";
+import { TechStack } from "../components/TechStack";
+import { Footer } from "../components/Footer";
 
+export const Home = () => (
+  <div className="flex min-h-screen flex-col overflow-x-hidden">
+    <CustomCursor />
+    <NavBar />
 
-export const Home = () => {
-    return <div className="min-h-screen 
-    bg-background
-    text-foreground overflow-x-hidden"> 
+    <main className="flex-1">
+      <HeroSection />
+      <Ticker />
+      <Projects />
+      <About />
+      <TechStack />
+    </main>
 
-        <NavBar />
-
-        <CustomBackground />
-
-        <ThemeToggle />
-        
-        <main>
-            <HeroSection />
-            <About />
-            <TechStack />
-            <Projects />
-            <Contact />
-        </main>
-
-        <Footer />
-
-    </div>
-}
+    <Footer />
+  </div>
+);

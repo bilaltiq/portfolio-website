@@ -1,56 +1,38 @@
-import { Moon, Sun } from "lucide-react";
 import { useEffect, useState } from "react";
 import { cn } from "@/lib/utils";
 
-export const ThemeToggle = () => {
-  const [isDarkMode, setIsDarkMode] = useState(true);
+/**
+ * Light is the default; the choice is persisted and re-applied pre-paint by the
+ * inline script in index.html, so this only has to read the class it left behind.
+ */
+export const ThemeToggle = ({ className }) => {
+  const [isDark, setIsDark] = useState(false);
 
   useEffect(() => {
-    let storedTheme = localStorage.getItem("theme");
-    if (!storedTheme) {
-      // default to dark mode
-      storedTheme = "dark";
-      localStorage.setItem("theme", "dark");
-    }
-    setIsDarkMode(storedTheme === "dark");
-    if (storedTheme === "dark") {
-      document.documentElement.classList.add("dark");
-    } else {
-      document.documentElement.classList.remove("dark");
-    }
+    setIsDark(document.documentElement.classList.contains("dark"));
   }, []);
 
-  const toggleTheme = () => {
-    const root = document.documentElement;
-    root.classList.add("transition-opacity", "duration-300", "opacity-0");
-    setTimeout(() => {
-      if (isDarkMode) {
-        root.classList.remove("dark");
-        localStorage.setItem("theme", "light");
-      } else {
-        root.classList.add("dark");
-        localStorage.setItem("theme", "dark");
-      }
-      setTimeout(() => {
-        root.classList.remove("opacity-0");
-      }, 50);
-      setIsDarkMode(!isDarkMode);
-    }, 100);
+  const toggle = () => {
+    const next = !isDark;
+    document.documentElement.classList.toggle("dark", next);
+    localStorage.setItem("theme", next ? "dark" : "light");
+    document
+      .querySelector('meta[name="theme-color"]')
+      ?.setAttribute("content", next ? "#131210" : "#faf9f6");
+    setIsDark(next);
   };
 
   return (
     <button
-      onClick={toggleTheme}
+      type="button"
+      onClick={toggle}
+      aria-label={isDark ? "Switch to light theme" : "Switch to dark theme"}
       className={cn(
-        "fixed max-sm:hidden top-5 right-5 z-50 p-2 rounded-full",
-        "transition-colors duration-300 focus:outline-hidden"
+        "mono-label transition-colors duration-200 hover:!text-brand",
+        className
       )}
     >
-      {/* {isDarkMode ? (
-        <Sun className="h-6 w-6 text-white-300" />
-      ) : (
-        <Moon className="h-6 w-6 text-purple-800" />
-      )} */}
+      {isDark ? "Light" : "Dark"}
     </button>
   );
 };

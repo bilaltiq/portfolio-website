@@ -1,58 +1,68 @@
-import { ArrowDown } from "lucide-react"
-import ProfileCard from "./ProfileCard"
-import avatar from "../assets/avatar.png"
-import Aurora from "../components/ui/Aurora";
+import { FigurePlate } from "./FigurePlate";
 
-export const HeroSection = () => {
-    return (
-    <section
-      id="hero"
-      className="relative min-h-screen flex flex-col items-center justify-center px-4"
-    >
+const lines = [
+  <>
+    Hi! I'm <span className="text-brand">Bilal</span> —
+  </>,
+  <>I teach machines</>,
+  <>to see.</>,
+];
 
-      {/* Aurora background */}
-      <Aurora
-        colorStops={["#3A29FF", "#FF94B4", "#FF3232"]}
-        blend={0.5}
-        amplitude={1.0}
-        speed={0.5}
-      />
-
-    <div className="container max-w-4xl mx-auto text-center z-10 flex flex-col items-center justify-center space-y-10">
-    {/* Text and Button */}
-    <div className="space-y-4 mt-32">
-      <h1 className="text-5xl md:text-6xl font-bold tracking-tight">
-        <span className="opacity-0 inline-block animate-fade-in">Hi, I'm </span>
-        <span className="text-glow inline-block opacity-0 ml-2 animate-fade-in-delay-1"> Bilal </span>
-        <span className="text-glow inline-block ml-2 opacity-0 animate-fade-in-delay-2"> Tariq</span>
-      </h1>
-      <p className="text-md md:text-lg text-muted-foreground max-w-2xl mx-auto">
-        Software Engineering. Visual Computing. Machine Learning. Driven by Design.
+export const HeroSection = () => (
+  <section
+    id="top"
+    className="container-site grid items-center gap-12 pb-16 pt-28 md:min-h-[88vh] md:grid-cols-12 md:gap-10 md:pb-20 md:pt-36"
+  >
+    <div className="md:col-span-7">
+      <p
+        className="mono-label mb-6 opacity-0"
+        style={{ animation: "fade-up 0.7s ease-out 0.1s forwards" }}
+      >
+        Software Engineer — Amherst, MA
       </p>
-      <div className="pt-4 opacity-0 animate-fade-in-delay-4 -mt-3 mb-1">
-        <a href="#projects" className="cosmic-button animate-float">
-          View My Work
+
+      <h1 className="text-[clamp(2.6rem,7vw,5.5rem)] font-black leading-[1.02] tracking-[-0.03em]">
+        {lines.map((line, i) => (
+          <div key={i} className="line-mask">
+            <span
+              className="line-rise"
+              style={{ animationDelay: `${0.15 + i * 0.08}s` }}
+            >
+              {line}
+            </span>
+          </div>
+        ))}
+      </h1>
+
+      <p
+        className="mt-8 max-w-[34rem] text-base leading-[1.5] text-muted-foreground opacity-0"
+        style={{ animation: "fade-up 0.7s ease-out 0.55s forwards" }}
+      >
+        Machine learning, visual computing, and the systems underneath —
+        <br className="hidden sm:block" /> from CAD-to-sketch models at Google Research to
+        satellite
+        <br className="hidden sm:block" /> segmentation over Antarctica. CS &amp; Math at Amherst
+        College.
+      </p>
+
+      <div
+        className="mt-10 flex items-center gap-8 opacity-0"
+        style={{ animation: "fade-up 0.7s ease-out 0.68s forwards" }}
+      >
+        <a href="#work" className="link-line text-sm font-medium">
+          Selected work ↓
+        </a>
+        <a href="#about" className="link-line text-sm text-muted-foreground">
+          About me →
         </a>
       </div>
     </div>
 
-          {/* Profile Card below text */}
-          <div className="flex justify-center scale-90 -mt-10">
-            <ProfileCard
-              name="Bilal Tariq"
-              title="SWE + ML"
-              handle=""
-              status="Online"
-              contactText="Contact Me"
-              avatarUrl={avatar}
-              showUserInfo={false}
-              enableTilt={true}
-              enableMobileTilt={false}
-              onContactClick={() => console.log('Contact clicked')}
-            />
-          </div>
-        </div>
-
-      </section>
-    )
-}
+    <div
+      className="md:col-span-5 opacity-0"
+      style={{ animation: "fade-up 0.8s ease-out 0.4s forwards" }}
+    >
+      <FigurePlate />
+    </div>
+  </section>
+);
