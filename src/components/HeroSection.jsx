@@ -23,7 +23,7 @@ export const HeroSection = () => (
         className="mono-label mb-6 opacity-0"
         style={{ animation: "fade-up 0.7s ease-out 0.1s forwards" }}
       >
-        Bilal Tariq — NYC
+        bilal tariq — nyc
       </p>
 
       <h1 className="text-[clamp(2.6rem,7vw,5.5rem)] font-black leading-[1.02] tracking-[-0.03em]">
@@ -49,8 +49,8 @@ export const HeroSection = () => (
         </p>
 
         <div className="mt-5 flex flex-col gap-2.5 sm:max-w-[24rem]">
-          <EducationBadge school="Amherst College" detail="cs & math, ba — may 2027" />
-          <EducationBadge school="AIT Budapest" detail="computer science — study abroad" />
+          <EducationBadge school="amherst college" detail="cs & math, ba — may 2027" />
+          <EducationBadge school="ait budapest" detail="computer science — study abroad" />
         </div>
       </div>
 

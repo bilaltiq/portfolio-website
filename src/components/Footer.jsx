@@ -2,17 +2,17 @@ import { Reveal } from "./Reveal";
 
 const meta = [
   {
-    label: "Social",
-    value: "LinkedIn ↗",
+    label: "social",
+    value: "linkedin ↗",
     href: "https://www.linkedin.com/in/tariq-bilal/",
   },
-  { label: "GitHub", value: "bilaltiq ↗", href: "https://github.com/bilaltiq" },
+  { label: "github", value: "bilaltiq ↗", href: "https://github.com/bilaltiq" },
   {
-    label: "Instagram",
+    label: "instagram",
     value: "mbtoshq ↗",
     href: "https://www.instagram.com/mbtoshq/",
   },
-  { label: "Location", value: "New York, NY" },
+  { label: "location", value: "new york, ny" },
 ];
 
 export const Footer = () => (
@@ -22,11 +22,11 @@ export const Footer = () => (
   >
     <div className="container-site pt-16 md:pt-24">
       <Reveal>
-        <p className="mono-label">Get in touch</p>
+        <p className="mono-label">get in touch</p>
 
         <a
           href="mailto:mtariq27@amherst.edu"
-          data-cursor="Say hi"
+          data-cursor="say hi"
           className="group mt-4 inline-block"
         >
           <span className="text-[clamp(1.5rem,5.2vw,4.5rem)] font-medium leading-[1.05] tracking-tight transition-colors duration-300 group-hover:text-brand">
@@ -38,8 +38,8 @@ export const Footer = () => (
         </a>
 
         <p className="mt-5 max-w-[34rem] text-sm leading-[1.6] text-muted-foreground">
-          Open to conversations about engineering, product, and the space between
-          them. I read everything that comes in.
+          always up for talking about engineering, product, or anything in between.
+          i read everything that comes in.
         </p>
 
         <div className="mt-12 grid grid-cols-2 gap-8 md:mt-16 md:grid-cols-4">
@@ -77,14 +77,14 @@ export const Footer = () => (
             "1px color-mix(in srgb, var(--foreground) 22%, transparent)",
         }}
       >
-        BILAL TARIQ
+        bilal tariq
       </div>
     </Reveal>
 
     <div className="border-t border-border">
       <div className="container-site flex flex-col gap-2 py-5 font-mono text-[11px] uppercase tracking-[0.14em] text-muted-foreground md:flex-row md:items-center md:justify-between">
-        <p>© {new Date().getFullYear()} Bilal Tariq — All rights reserved</p>
-        <p>Type: Inter · IBM Plex Mono · Newsreader</p>
+        <p>© {new Date().getFullYear()} bilal tariq — all rights reserved</p>
+        <p>type: inter · ibm plex mono · newsreader</p>
       </div>
     </div>
   </footer>

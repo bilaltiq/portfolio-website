@@ -61,7 +61,7 @@ const EmptySheet = () => (
         <span className="mono-label absolute left-3 top-3 opacity-40">{frameNo(i)}</span>
         {i === 0 && (
           <p className="mono-label max-w-[85%] text-center leading-relaxed">
-            Drop photos in
+            drop photos in
             <br />
             <span className="!text-brand">src/assets/photography/</span>
           </p>
@@ -92,7 +92,7 @@ const Frame = ({ photo, index, onOpen, registerRef }) => {
       }}
       onClick={onOpen}
       onPointerMove={onMove}
-      data-cursor="Open"
+      data-cursor="open"
       aria-label={`Open photo ${frameNo(index)}${photo.title ? ` — ${photo.title}` : ""}`}
       className="frame group relative block w-full overflow-hidden rounded-[3px] bg-muted"
     >
@@ -119,7 +119,7 @@ const Frame = ({ photo, index, onOpen, registerRef }) => {
 
       <div className="pointer-events-none absolute inset-x-0 bottom-0 translate-y-2 bg-gradient-to-t from-black/75 to-transparent p-3 pt-10 text-left opacity-0 transition-[opacity,transform] duration-300 group-hover:translate-y-0 group-hover:opacity-100">
         <p className="text-sm font-medium tracking-tight text-white">
-          {photo.title ?? `Frame ${frameNo(index)}`}
+          {photo.title ?? `frame ${frameNo(index)}`}
         </p>
         {(photo.place || photo.year) && (
           <p className="mono-label !text-white/70">
@@ -163,7 +163,7 @@ export const Photography = () => {
 
       <main className="flex-1">
         <header className="container-site pb-10 pt-28 md:pb-14 md:pt-36">
-          <p className="mono-label mb-6">Off duty — {photos.length || "no"} frames</p>
+          <p className="mono-label mb-6">off duty — {photos.length || "no"} frames</p>
 
           <h1 className="text-[clamp(2.8rem,11vw,9rem)] font-black leading-[0.95] tracking-[-0.04em]">
             <span className="line-mask block">
@@ -175,17 +175,17 @@ export const Photography = () => {
 
           <div className="mt-8 grid gap-6 border-t border-border pt-6 md:grid-cols-12">
             <p className="text-base leading-[1.6] text-muted-foreground md:col-span-6">
-              The other half of “touch of design.” Mostly cities, mostly light —
-              whatever I notice on the walk between things.
+              the other half of the design thing. mostly cities, and whatever light
+              i catch on the way somewhere.
             </p>
             <div className="flex gap-10 md:col-span-6 md:justify-end">
               <div>
-                <p className="mono-label mb-1">Frames</p>
+                <p className="mono-label mb-1">frames</p>
                 <p className="text-sm">{photos.length || "—"}</p>
               </div>
               <div>
-                <p className="mono-label mb-1">Based</p>
-                <p className="text-sm">New York, NY</p>
+                <p className="mono-label mb-1">based</p>
+                <p className="text-sm">new york, ny</p>
               </div>
             </div>
           </div>

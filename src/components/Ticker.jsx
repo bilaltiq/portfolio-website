@@ -1,13 +1,13 @@
 const items = [
-  "Machine Learning",
-  "Visual Computing",
-  "Distributed Systems",
-  "LLM Tool-Calling",
-  "Computer Vision",
-  "Cryptography",
-  "3D Graphics",
-  "Full-Stack",
-  "Research",
+  "machine learning",
+  "visual computing",
+  "distributed systems",
+  "llm tool-calling",
+  "computer vision",
+  "cryptography",
+  "3d graphics",
+  "full-stack",
+  "research",
 ];
 
 const Row = ({ hidden }) => (

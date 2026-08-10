@@ -76,9 +76,9 @@ export const NavBar = () => {
       >
         <div className="container-site flex h-16 items-center justify-between md:h-20">
           <Link to="/" className="group flex items-baseline gap-2">
-            <span className="eyebrow">Bilal Tariq</span>
+            <span className="eyebrow">bilal tariq</span>
             <span className="mono-label hidden transition-colors group-hover:!text-brand sm:inline">
-              (NYC)
+              (nyc)
             </span>
           </Link>
 
@@ -134,7 +134,7 @@ export const NavBar = () => {
               aria-label={isMenuOpen ? "Close menu" : "Open menu"}
               className="mono-label !text-foreground"
             >
-              {isMenuOpen ? "Close" : "Menu"}
+              {isMenuOpen ? "close" : "menu"}
             </button>
           </div>
         </div>

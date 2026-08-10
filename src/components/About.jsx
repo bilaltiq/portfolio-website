@@ -49,28 +49,26 @@ export const About = () => (
   <section id="about" className="container-site pt-24 md:pt-32">
     <div className="section-rule mb-10 md:mb-14">
       <h2 className="eyebrow flex items-baseline gap-3">
-        About
-        <span className="mono-label">(The long version)</span>
+        about
+        <span className="mono-label">(the long version)</span>
       </h2>
-      <span className="mono-label">New York, NY</span>
+      <span className="mono-label">new york, ny</span>
     </div>
 
     <div className="grid gap-12 md:grid-cols-12 md:gap-10">
       <Reveal className="md:col-span-7">
         <p className="text-[clamp(1.35rem,2.6vw,2rem)] font-medium leading-[1.25] tracking-[-0.02em]">
-          I like the messy middle — where a research result has to survive contact
-          with real users, and a product has to become something a team can ship
-          without stepping on each other.
+          i like the part where an idea has to actually work for somebody.
         </p>
         <p className="mt-6 max-w-[38rem] text-base leading-[1.6] text-muted-foreground">
-          That's meant wearing most of the job titles at once. I've written the CUDA
-          kernel and written the spec. At Finosu I shipped conversation memory sitting
-          behind 1.4M+ calls; at Layout I recruited seven engineers and learned the
-          hard part was never the 3D rendering — it was deciding what not to build.
+          that's meant doing a bit of everything. i've written cuda kernels and i've
+          written specs. at finosu i built the conversation memory sitting behind
+          about 1.4 million calls. at layout i talked seven engineers into building a
+          3d design tool with me, then spent most of my time working out what not to
+          build.
         </p>
         <p className="mt-4 max-w-[38rem] text-base leading-[1.6] text-muted-foreground">
-          I care how it looks, too. Not as decoration — because the interface is where
-          all the engineering finally has to make sense to someone.
+          i care how it looks too. that's the part people actually meet.
         </p>
 
         <div className="mt-10 flex flex-wrap items-center gap-8">
@@ -90,23 +88,23 @@ export const About = () => (
       <Reveal className="md:col-span-5" delay={100}>
         <dl className="grid grid-cols-2 gap-x-6 gap-y-8">
           <div>
-            <dt className="mono-label mb-2">Education</dt>
+            <dt className="mono-label mb-2">education</dt>
             <dd className="text-sm leading-relaxed">
-              Amherst College
+              amherst college
               <br />
               <span className="text-muted-foreground">cs &amp; math, ba</span>
             </dd>
           </div>
           <div>
-            <dt className="mono-label mb-2">Graduating</dt>
+            <dt className="mono-label mb-2">graduating</dt>
             <dd className="text-sm leading-relaxed">
-              May 2027
+              may 2027
               <br />
-              <span className="text-muted-foreground">GPA 3.86 · Major 3.91</span>
+              <span className="text-muted-foreground">gpa 3.86 · major 3.91</span>
             </dd>
           </div>
           <div>
-            <dt className="mono-label mb-2">Hats</dt>
+            <dt className="mono-label mb-2">hats</dt>
             <dd className="text-sm leading-relaxed">
               eng &amp; product
               <br />
@@ -114,7 +112,7 @@ export const About = () => (
             </dd>
           </div>
           <div>
-            <dt className="mono-label mb-2">Currently</dt>
+            <dt className="mono-label mb-2">currently</dt>
             <dd className="text-sm leading-relaxed">
               building{" "}
               <a
@@ -128,7 +126,7 @@ export const About = () => (
             </dd>
           </div>
           <div className="col-span-2">
-            <dt className="mono-label mb-2">Honors &amp; Leadership</dt>
+            <dt className="mono-label mb-2">honors &amp; leadership</dt>
             <dd className="text-sm leading-relaxed text-muted-foreground">
               MeikleJohn Fellowship ($5,000 startup R&amp;D grant) · AI in the Liberal
               Arts Fellow · E-Board, CS Club · Core Organizer, “Hack The Herd”
@@ -142,7 +140,7 @@ export const About = () => (
     <div className="mt-20 md:mt-28">
       <div className="section-rule mb-2">
         <h3 className="eyebrow flex items-baseline gap-3">
-          Experience
+          experience
           <span className="mono-label">({String(experience.length).padStart(2, "0")})</span>
         </h3>
         <span className="mono-label">2024 — 2026</span>
