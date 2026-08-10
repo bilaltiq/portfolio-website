@@ -127,7 +127,16 @@ const projects = [
 
 export const Projects = () => (
   <section id="work" className="container-site relative pt-24 md:pt-32">
-    <MarkWatermark side="right" size="78vmin" top="6%" drift={110} />
+    <MarkWatermark
+      variant="outline"
+      side="right"
+      size="112vmin"
+      top="-6%"
+      offset="-24%"
+      drift={120}
+      strokeWidth={0.22}
+      opacity="opacity-[0.45] dark:opacity-[0.4]"
+    />
 
     <div className="section-rule mb-8 md:mb-10">
       <h2 className="eyebrow flex items-baseline gap-3">

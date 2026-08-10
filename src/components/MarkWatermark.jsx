@@ -14,7 +14,14 @@ export const MarkWatermark = ({
   side = "right",
   size = "68vmin",
   top = "8%",
+  offset = "-9%",
+  opacity,
   drift = 90,
+  /* "fill" sits behind the section. "outline" draws a hairline contour over the
+     top of it, for sections whose content is opaque edge to edge and would
+     otherwise swallow the mark entirely. */
+  variant = "fill",
+  strokeWidth = 0.3,
   className,
 }) => {
   const ref = useRef(null);
@@ -56,18 +63,44 @@ export const MarkWatermark = ({
     <div
       aria-hidden="true"
       className={cn(
-        "pointer-events-none absolute inset-0 -z-10 overflow-hidden",
+        "pointer-events-none absolute inset-0 overflow-hidden",
+        variant === "outline" ? "z-10" : "-z-10",
         className
       )}
     >
       <svg
         ref={ref}
         viewBox={MARK_VIEWBOX}
-        className="absolute text-accent opacity-[0.11] will-change-transform dark:opacity-[0.15]"
-        style={{ width: size, height: size, [side]: "-9%", top }}
+        className={cn(
+          "absolute text-brand will-change-transform",
+          opacity ?? "opacity-[0.11] dark:opacity-[0.15]"
+        )}
+        style={{ width: size, height: size, [side]: offset, top }}
       >
-        <path d={MARK_PATH} fill="currentColor" />
-        <circle cx={MARK_DOT.cx} cy={MARK_DOT.cy} r={MARK_DOT.r} fill="currentColor" />
+        {variant === "outline" ? (
+          <>
+            <path
+              d={MARK_PATH}
+              fill="none"
+              stroke="currentColor"
+              strokeWidth={strokeWidth}
+              strokeLinejoin="round"
+            />
+            <circle
+              cx={MARK_DOT.cx}
+              cy={MARK_DOT.cy}
+              r={MARK_DOT.r}
+              fill="none"
+              stroke="currentColor"
+              strokeWidth={strokeWidth}
+            />
+          </>
+        ) : (
+          <>
+            <path d={MARK_PATH} fill="currentColor" />
+            <circle cx={MARK_DOT.cx} cy={MARK_DOT.cy} r={MARK_DOT.r} fill="currentColor" />
+          </>
+        )}
       </svg>
     </div>
   );
