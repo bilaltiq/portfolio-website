@@ -1,168 +1,224 @@
 @import "tailwindcss";
 
+/* ─────────────────────────────────────────────
+   Design tokens — warm editorial, light + dark
+   ───────────────────────────────────────────── */
+
 @theme {
-  --color-border: hsl(var(--border));
-  --color-background: hsl(var(--background));
-  --color-foreground: hsl(var(--foreground));
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-border: var(--border);
+  --color-card: var(--card);
+  --color-brand: var(--brand);
 
-  --color-primary: hsl(var(--primary));
-  --color-primary-foreground: hsl(var(--primary-foreground));
+  --font-sans: "Inter", "Helvetica Neue", Helvetica, Arial, ui-sans-serif,
+    system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, monospace;
 
-  --color-card: hsl(var(--card));
+  --radius: 0.1875rem;
 
-  --animate-float: float 6s ease-in-out infinite;
-  --animate-pulse-subtle: pulse-subtle 4s ease-in-out infinite;
-  --animate-fade-in: fade-in 0.7s ease-out forwards;
-  --animate-fade-in-delay-1: fade-in 0.7s ease-out 0.2s forwards;
-  --animate-fade-in-delay-2: fade-in 0.7s ease-out 0.4s forwards;
-  --animate-fade-in-delay-3: fade-in 0.7s ease-out 0.6s forwards;
-  --animate-fade-in-delay-4: fade-in 0.7s ease-out 1.0s forwards;
-  --animate-meteor: meteor 5s linear infinite;
+  --animate-ticker: ticker 60s linear infinite;
 
-  @keyframes float {
-    0%,
-    100% {
-      transform: translateY(0);
-    }
-    50% {
-      transform: translateY(-10px);
-    }
-  }
-  @keyframes pulse-subtle {
-    0%,
-    100% {
-      opacity: 1;
-    }
-    50% {
-      opacity: 0.8;
-    }
-  }
-  @keyframes fade-in {
+  @keyframes ticker {
     from {
-      opacity: 0;
-      transform: translateY(20px);
+      transform: translateX(0);
     }
     to {
-      opacity: 1;
-      transform: translateY(0);
+      transform: translateX(-50%);
     }
   }
-  @keyframes meteor {
-    0% {
-      transform: rotate(215deg) translateX(0);
-      opacity: 1;
-    }
-    70% {
-      opacity: 1;
-    }
-    100% {
-      transform: rotate(215deg) translateX(-500px);
-      opacity: 0;
-    }
+}
+
+/* Declared outside @theme on purpose: Tailwind only emits in-theme keyframes
+   that an --animate-* variable references, and these are driven by inline
+   `animation` styles, so an in-theme declaration would be tree-shaken away. */
+@keyframes line-rise {
+  from {
+    transform: translateY(115%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
 @layer base {
   :root {
-    --background: 210 40% 98%;
-    --foreground: 222 47% 11%;
-
-    --card: 0 0% 100%;
-
-    --primary: 250 47% 60%;
-    --primary-foreground: 210 40% 98%;
-
-    --border: 214 32% 91%;
+    --background: #faf9f6;
+    --foreground: #16140f;
+    --muted: #f0eee7;
+    --muted-foreground: #76726a;
+    --border: #e7e4da;
+    --card: #ffffff;
+    --brand: #be5f45;
   }
 
   .dark {
-    --background: 280 40% 6%;
-    --foreground: 213 31% 91%;
-    --muted-foreground: 213 10% 60%;
-
-    --card: 222 47% 8%;
-
-    --primary: 260 80% 65%;
-    --primary-foreground: 213 31% 91%;
-
-    --border: 217 33% 20%;
+    --background: #131210;
+    --foreground: #f5f4ef;
+    --muted: #232220;
+    --muted-foreground: #a3a098;
+    --border: rgba(245, 244, 239, 0.12);
+    --card: #1b1a17;
+    --brand: #d2775c;
   }
 
   * {
-    @apply border-border;
+    border-color: var(--border);
   }
 
   html {
-    @apply scroll-smooth;
+    scroll-behavior: smooth;
+    scroll-padding-top: 5rem;
+    -webkit-font-smoothing: antialiased;
   }
 
   body {
-    @apply bg-background text-foreground transition-colors duration-700;
+    background-color: var(--background);
+    color: var(--foreground);
+    font-family: var(--font-sans);
     font-feature-settings: "rlig" 1, "calt" 1;
+    transition: background-color 0.4s ease, color 0.4s ease;
+  }
+
+  ::selection {
+    background-color: var(--brand);
+    color: var(--background);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
   }
 }
 
-@utility container {
-  margin-inline: auto;
-  padding-inline: 2rem;
+/* ─────────────────────────────────────────────
+   Utilities
+   ───────────────────────────────────────────── */
 
-  @media (width >= 640px) {
-    max-width: 640px;
-  }
+@utility container-site {
+  width: 100%;
+  max-width: 1440px;
+  margin-inline: auto;
+  padding-inline: 1.25rem;
+
   @media (width >= 768px) {
-    max-width: 768px;
+    padding-inline: 2rem;
   }
   @media (width >= 1024px) {
-    max-width: 1024px;
-  }
-  @media (width >= 1280px) {
-    max-width: 1280px;
-  }
-  @media (width >= 1400px) {
-    max-width: 1400px;
+    padding-inline: 3rem;
   }
 }
 
-@utility text-glow {
-  @apply relative;
-  text-shadow: 0 0 10px rgba(167, 139, 250, 0.5);
+/* Small uppercase monospace caption — the workhorse label of the whole site */
+@utility mono-label {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--muted-foreground);
 }
 
-@utility text-muted-foreground {
-  @apply relative;
-  color: hsl(var(--muted-foreground));
-}
-  
-@utility card-hover {
-  @apply transition-transform duration-300 hover:scale-[1.02] hover:shadow-lg;
+/* Underline that wipes in from the left on hover */
+@utility link-line {
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: -0.125rem;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: var(--brand);
+    transform-origin: left;
+    scale: 0 1;
+    transition: scale 0.3s cubic-bezier(0, 0, 0.2, 1);
+  }
+
+  &:hover::after,
+  .group:hover &::after {
+    scale: 1 1;
+  }
 }
 
-@utility gradient-border {
-  @apply relative rounded-md;
-  background: linear-gradient(to right, hsl(var(--card)), hsl(var(--card)));
-  background-clip: padding-box;
-  border: 1px solid transparent;
+@utility section-rule {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 1rem;
 }
 
-@utility cosmic-button {
-  @apply px-6 py-2 rounded-full bg-primary text-primary-foreground font-medium 
-         transition-all duration-300 hover:shadow-[0_0_10px_rgba(139,92,246,0.9)]
-         hover:scale-105 active:scale-95;
+@utility eyebrow {
+  font-size: 0.875rem;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
 }
 
-@utility star {
-  @apply absolute rounded-full bg-white;
-  box-shadow: 0 0 10px 2px rgba(255, 255, 255, 0.4);
+@utility ticker-track {
+  width: max-content;
+  will-change: transform;
+  animation: var(--animate-ticker);
+
+  @media (prefers-reduced-motion: reduce) {
+    animation: none;
+  }
 }
 
-@utility meteor {
-  @apply absolute bg-linear-to-r from-white via-white to-transparent rounded-full;
-  box-shadow: 0 0 10px 5px rgba(255, 255, 255, 0.3);
+/* Hero headline: each line rises out of its own overflow-hidden mask */
+@utility line-mask {
+  overflow: hidden;
+  padding-bottom: 0.1em;
+  margin-bottom: -0.1em;
 }
 
-#root {
-  max-width: 100%;
-  margin: 0 auto;
-  padding: 0;
-  text-align: center;
+@utility line-rise {
+  display: block;
+  will-change: transform;
+  transform: translateY(115%);
+  animation: line-rise 0.9s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Scroll-reveal: opacity/translate driven by a data attribute set by IO */
+@utility reveal {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.7s cubic-bezier(0, 0, 0.2, 1),
+    transform 0.7s cubic-bezier(0, 0, 0.2, 1);
+
+  &[data-visible="true"] {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* Hide the native cursor only where the custom one is actually drawn */
+@media (hover: hover) and (pointer: fine) {
+  html.has-custom-cursor,
+  html.has-custom-cursor * {
+    cursor: none;
+  }
 }

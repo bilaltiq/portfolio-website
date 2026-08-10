@@ -4,7 +4,33 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Bilal Tariq</title>
+    <meta name="theme-color" content="#faf9f6" />
+    <title>Bilal Tariq — Software Engineer</title>
+    <meta
+      name="description"
+      content="Bilal Tariq is a software engineer and researcher at Amherst College working across machine learning, visual computing, and full-stack systems."
+    />
+    <meta property="og:title" content="Bilal Tariq — Software Engineer" />
+    <meta
+      property="og:description"
+      content="Machine learning, visual computing, and full-stack systems. CS & Math at Amherst College."
+    />
+    <meta property="og:type" content="website" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600;700;900&display=swap"
+      rel="stylesheet"
+    />
+
+    <script>
+      // Set the theme before first paint so there's no flash of the wrong palette.
+      (() => {
+        const stored = localStorage.getItem("theme");
+        if (stored === "dark") document.documentElement.classList.add("dark");
+      })();
+    </script>
   </head>
   <body>
     <div id="root"></div>

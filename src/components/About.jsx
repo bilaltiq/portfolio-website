@@ -1,115 +1,149 @@
-import { Code, GraduationCap, LucideBriefcase } from "lucide-react"
+import { Reveal } from "./Reveal";
 
-export const About = () => {
-    return (
-    <section id="about" className="py-24 px-4 relative">
-        <div className="container mx-auto max-w-5xl">
-            <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">
-                <span>About Me</span>
-            </h2>
+const experience = [
+  {
+    org: "Google Research × Brown University",
+    role: "Research Assistant",
+    period: "2025",
+    notes: [
+      "Built CAD-to-sketch models with Graph Attention Networks and diffusion — 4× faster with higher accuracy.",
+      "Led the team, won the Brown–Google Symposium, and prepared an ISVC 2025 paper plus open-source release.",
+    ],
+  },
+  {
+    org: "Amherst College",
+    role: "Gregory S. Call SWE Intern",
+    period: "2024 — 2025",
+    notes: [
+      "TensorFlow UNet++ pipeline for Sentinel-1 crevasse detection, raising accuracy from 92.8% to 99.1%.",
+      "Containerized the workflow for reproducible A100 GPU cluster deployment.",
+    ],
+  },
+  {
+    org: "Layout",
+    role: "Co-Founder & CTO",
+    period: "2024 — Present",
+    notes: [
+      "Led development of a 3D apartment visualization platform using React, Babylon, and AWS.",
+      "Built and managed a 4-engineer team, secured real estate partnerships, and prepared a seed round.",
+    ],
+  },
+];
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-                <div className="space-y-6">
-                    <span className="flex justify-center space-x-4">
-                    <GraduationCap size={35} className="text-primary" />
-                    </span>
-                    <h3 className="text-2xl font-semibold flex justify-center mb-0.5">  
-                        <span>Amherst College</span>   
-                    </h3>
-                    <p className="text-center italic text-muted-foreground mb-3">
-                        Expected Graduation - May 2027
-                    </p>
+export const About = () => (
+  <section id="about" className="container-site pt-24 md:pt-32">
+    <div className="section-rule mb-10 md:mb-14">
+      <h2 className="eyebrow flex items-baseline gap-3">
+        About
+        <span className="mono-label">(Bio)</span>
+      </h2>
+      <span className="mono-label">Amherst, MA</span>
+    </div>
 
-                    <p className="text-muted-foreground siz"> 
-                        Computer Science & Math Double Major
-                    </p>
+    <div className="grid gap-12 md:grid-cols-12 md:gap-10">
+      <Reveal className="md:col-span-7">
+        <p className="text-[clamp(1.35rem,2.6vw,2rem)] font-medium leading-[1.25] tracking-[-0.02em]">
+          I'm a machine learning and visual computing enthusiast building software
+          that bridges technology and creativity — from AI-driven 3D modelling to
+          customer-facing web applications.
+        </p>
+        <p className="mt-6 max-w-[38rem] text-base leading-[1.6] text-muted-foreground">
+          This site collects the projects, experiments, and thoughts that come out of
+          working at the intersection of code, design, and ML. Most of it starts as a
+          question about how a machine can be taught to see something a person already
+          understands at a glance.
+        </p>
 
-                    <p className="text-muted foreground">
-                        I'm a machine learning and visual computing enthusiast with a passion for building software that bridges technology and creativity. From AI-driven 3D modelling to customer-centric web applications, this site showcases some of my projects, experiments and thoughts as I continue to work at the intersection of code, design and ML.
-                    </p>
-
-                    <div className="flex flex-col sm:flex-row gap-4 pt4 justify-center">
-                        <a href="#contact" className="cosmic-button">
-                            Get In Touch
-                        </a>
-                        
-                        <a 
-                            href="/Bilal Tariq - Intern Resume 2025.pdf" 
-                            download="Bilal Tariq - Intern Resume 2025.pdf"
-                            className="px-6 py-2 rounded-full border border-primary text-white hover:bg-primary/10 transition-colors duration-300"
-                        >
-                            Download Resume
-                        </a>
-                    </div>
-
-                </div>
-                
-            
-
-                <div className="grid grid-cols-1 gap-6">
-
-                    
-
-                    
-
-                   <span className="flex justify-center space-x-4">
-                    <LucideBriefcase size={35} className="text-primary" />
-                    </span>
-                    <h1>Experience</h1>
-                    <div className="gradient-border p-6 card-hover">
-                        
-                        <div className="flex items-start gap-4">
-                            <div className="p-3 rounded-full bg-primary/10">
-                                <Code className="h-6 w-6"/>
-                            </div>
-
-                            <div>
-                                <h1 className="font-semibold text-left">Google Research & Brown University</h1>
-                                <ul className="list-disc list-inside text-sm text-gray-600 mt-2 space-y-1 text-left">
-                                    <li>Built CAD-to-sketch models with Graph Attention Networks and diffusion, 4x faster with higher accuracy.</li>
-                                    <li>Led team, won Brown-Google Symposium, and preparing ISVC 2025 paper + open-source release.</li>
-                                </ul>
-                            </div>
-
-                        </div>
-                    </div>
-                    <div className="gradient-border p-6 card-hover">
-                        <div className="flex items-start gap-4">
-                            <div className="p-3 rounded-full bg-primary/10">
-                                <Code className="h-6 w-6"/>
-                            </div>
-
-                            <div>
-                                <h1 className="font-semibold text-left">Gregory S. Call SWE Intern @ Amherst College</h1>
-                                <ul className="list-disc list-inside text-sm text-gray-600 mt-2 space-y-1 text-left">
-                                    <li>TensorFlow UNet++ pipeline for Sentinel-1 crevasse detection, raising accuracy from 92.8% to 99.1%.</li>
-                                    <li>Containerized workflow for reproducible A100 GPU cluster deployment.</li>
-                                </ul>
-                            </div>
-
-                        </div>
-                    </div>
-                    <div className="gradient-border p-6 card-hover">
-                        <div className="flex items-start gap-4">
-                            <div className="p-3 rounded-full bg-primary/10">
-                                <Code className="h-6 w-6"/>
-                            </div>
-
-                            <div>
-                                <h1 className="font-semibold text-left">Co-Founder & CTO @ Layout</h1>
-                                <ul className="list-disc list-inside text-sm text-gray-600 mt-2 space-y-1 text-left">
-                                    <li>Led development of a 3D apartment visualization platform using React, Babylon, and AWS.</li>
-                                    <li>Built and managed a 4-engineer team, secured partnerships with real estate firms, and prepared for seed-round funding.</li>
-                                </ul> 
-                            </div>  
-
-                        </div>
-                    </div>
-                </div>
-
-            </div>
+        <div className="mt-10 flex flex-wrap items-center gap-8">
+          <a href="#contact" className="link-line text-sm font-medium">
+            Get in touch →
+          </a>
+          <a
+            href="/Bilal Tariq - Intern Resume 2025.pdf"
+            download
+            className="link-line text-sm text-muted-foreground"
+          >
+            Download resume ↓
+          </a>
         </div>
-    </section>
-    
-    )
-}
+      </Reveal>
+
+      <Reveal className="md:col-span-5" delay={100}>
+        <dl className="grid grid-cols-2 gap-x-6 gap-y-8">
+          <div>
+            <dt className="mono-label mb-2">Education</dt>
+            <dd className="text-sm leading-relaxed">
+              Amherst College
+              <br />
+              <span className="text-muted-foreground">CS &amp; Math, BA</span>
+            </dd>
+          </div>
+          <div>
+            <dt className="mono-label mb-2">Graduating</dt>
+            <dd className="text-sm">May 2027</dd>
+          </div>
+          <div>
+            <dt className="mono-label mb-2">Focus</dt>
+            <dd className="text-sm leading-relaxed">
+              Machine Learning
+              <br />
+              Visual Computing
+            </dd>
+          </div>
+          <div>
+            <dt className="mono-label mb-2">Currently</dt>
+            <dd className="text-sm leading-relaxed">
+              Building{" "}
+              <a
+                href="https://layout--layout-58451.us-central1.hosted.app"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="link-line"
+              >
+                Layout
+              </a>
+            </dd>
+          </div>
+        </dl>
+      </Reveal>
+    </div>
+
+    {/* Experience — an index, not a stack of cards */}
+    <div className="mt-20 md:mt-28">
+      <div className="section-rule mb-2">
+        <h3 className="eyebrow flex items-baseline gap-3">
+          Experience
+          <span className="mono-label">({String(experience.length).padStart(2, "0")})</span>
+        </h3>
+        <span className="mono-label">2024 — Present</span>
+      </div>
+
+      {experience.map((job, i) => (
+        <Reveal
+          key={job.org}
+          delay={i * 70}
+          className="group grid gap-3 border-b border-border py-7 md:grid-cols-12 md:gap-6"
+        >
+          <div className="mono-label md:col-span-2">{job.period}</div>
+
+          <div className="md:col-span-4">
+            <h4 className="text-lg font-medium tracking-tight">{job.org}</h4>
+            <p className="mono-label mt-1">{job.role}</p>
+          </div>
+
+          <ul className="space-y-2 md:col-span-6">
+            {job.notes.map((note) => (
+              <li
+                key={note}
+                className="flex gap-3 text-sm leading-[1.6] text-muted-foreground"
+              >
+                <span className="mt-[0.6em] size-1 shrink-0 rounded-full bg-brand" />
+                {note}
+              </li>
+            ))}
+          </ul>
+        </Reveal>
+      ))}
+    </div>
+  </section>
+);
