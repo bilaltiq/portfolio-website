@@ -12,6 +12,7 @@
   --color-border: var(--border);
   --color-card: var(--card);
   --color-brand: var(--brand);
+  --color-accent: var(--accent);
 
   --font-sans: "Inter", "Helvetica Neue", Helvetica, Arial, ui-sans-serif,
     system-ui, sans-serif;
@@ -63,6 +64,10 @@
     --border: #e7e4da;
     --card: #ffffff;
     --brand: #be5f45;
+    /* Secondary accent. Terracotta stays the interactive colour; this one is
+       atmospheric — washes, duotone, rhythm marks. Kept dusty and red-leaning
+       so it sits in the same warm family rather than fighting it. */
+    --accent: #7b5e8f;
   }
 
   .dark {
@@ -73,6 +78,7 @@
     --border: rgba(245, 244, 239, 0.12);
     --card: #1b1a17;
     --brand: #d2775c;
+    --accent: #a98cc0;
   }
 
   * {

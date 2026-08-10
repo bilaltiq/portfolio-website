@@ -2,6 +2,7 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import { NavBar } from "../components/NavBar";
 import { CustomCursor } from "../components/CustomCursor";
+import { PageWash } from "../components/PageWash";
 import { Footer } from "../components/Footer";
 import { Reveal } from "../components/Reveal";
 import { Lightbox } from "../components/Lightbox";
@@ -156,7 +157,8 @@ export const Photography = () => {
 
   return (
     <div className="flex min-h-screen flex-col overflow-x-hidden">
-      <CustomCursor />
+      <PageWash />
+    <CustomCursor />
       <NavBar />
 
       <main className="flex-1">
