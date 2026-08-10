@@ -23,15 +23,23 @@ export const ThemeToggle = ({ className }) => {
   };
 
   return (
+    /* Sits in a pill so it reads as a control rather than another nav link —
+       the rest of the header is all plain text at the same weight. */
     <button
       type="button"
       onClick={toggle}
       aria-label={isDark ? "Switch to light theme" : "Switch to dark theme"}
       className={cn(
-        "mono-label transition-colors duration-200 hover:!text-brand",
+        "mono-label group flex items-center gap-1.5 rounded-full border border-border",
+        "bg-muted/70 py-1 pl-2 pr-2.5 transition-colors duration-200",
+        "hover:border-brand/40 hover:!text-brand",
         className
       )}
     >
+      <span
+        aria-hidden="true"
+        className="size-1.5 rounded-full bg-current opacity-50 transition-opacity duration-200 group-hover:opacity-100"
+      />
       {isDark ? "light" : "dark"}
     </button>
   );
