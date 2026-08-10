@@ -19,18 +19,14 @@ const categories = [
     items: "C++, C, Python, Java, TypeScript/JavaScript, SQL, RISC-V Assembly",
   },
   {
-    label: "systems & distributed",
+    label: "systems & infrastructure",
     items:
-      "Linux, Concurrency, Memory Management, CUDA, Networking, Cryptography, Docker, AWS (Lambda, DynamoDB, S3, API Gateway, Cognito), PostgreSQL, GitHub Actions CI/CD",
+      "Linux, Concurrency, Memory Management, CUDA, Networking, Cryptography, Docker, AWS (Lambda, DynamoDB, S3, API Gateway, Cognito), PostgreSQL, Git, GitHub Actions CI/CD",
   },
   {
-    label: "ml & nlp",
+    label: "ml & tooling",
     items:
-      "PyTorch, TensorFlow, Keras, PyTorch Geometric, HuggingFace Transformers, LLM tool-calling & retrieval",
-  },
-  {
-    label: "ai development tools",
-    items: "Claude Code, Cursor, GitHub Copilot, OpenAI & Anthropic APIs",
+      "PyTorch, TensorFlow, Keras, PyTorch Geometric, HuggingFace Transformers, scikit-learn, LLM tool-calling & retrieval; Claude Code, Cursor, GitHub Copilot",
   },
 ];
 
