@@ -50,7 +50,7 @@ export const About = () => (
     <div className="section-rule mb-10 md:mb-14">
       <h2 className="eyebrow flex items-baseline gap-3">
         About
-        <span className="mono-label">(Bio)</span>
+        <span className="mono-label">(The long version)</span>
       </h2>
       <span className="mono-label">Amherst, MA</span>
     </div>
@@ -58,15 +58,20 @@ export const About = () => (
     <div className="grid gap-12 md:grid-cols-12 md:gap-10">
       <Reveal className="md:col-span-7">
         <p className="text-[clamp(1.35rem,2.6vw,2rem)] font-medium leading-[1.25] tracking-[-0.02em]">
-          I'm a machine learning and visual computing enthusiast building software
-          that bridges technology and creativity — from AI-driven 3D modelling to
-          customer-facing web applications.
+          I like the messy middle — where a research result has to survive contact
+          with real users, and a product has to become something a team can ship
+          without stepping on each other.
         </p>
         <p className="mt-6 max-w-[38rem] text-base leading-[1.6] text-muted-foreground">
-          This site collects the projects, experiments, and thoughts that come out of
-          working at the intersection of code, design, and ML. Most of it starts as a
-          question about how a machine can be taught to see something a person already
-          understands at a glance.
+          That's meant wearing most of the job titles at once. I've written the CUDA
+          kernel and written the spec, run the standup and taken the 2am page. At
+          Finosu I shipped conversation memory sitting behind 1.4M+ calls; at Layout I
+          recruited seven engineers and learned the hard part was never the 3D
+          rendering — it was deciding what not to build.
+        </p>
+        <p className="mt-4 max-w-[38rem] text-base leading-[1.6] text-muted-foreground">
+          Still the most fun I have is the moment a model stops being confidently
+          wrong.
         </p>
 
         <div className="mt-10 flex flex-wrap items-center gap-8">
@@ -102,11 +107,11 @@ export const About = () => (
             </dd>
           </div>
           <div>
-            <dt className="mono-label mb-2">Focus</dt>
+            <dt className="mono-label mb-2">Hats</dt>
             <dd className="text-sm leading-relaxed">
-              Machine Learning
+              SWE &amp; AI/ML
               <br />
-              Systems &amp; Visual Computing
+              <span className="text-muted-foreground">PM &amp; TPM when it counts</span>
             </dd>
           </div>
           <div>
