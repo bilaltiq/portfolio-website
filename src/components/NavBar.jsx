@@ -4,13 +4,13 @@ import { cn } from "@/lib/utils";
 import { ThemeToggle } from "./ThemeToggle";
 
 const sections = [
-  { name: "About", hash: "#about" },
-  { name: "Work", hash: "#work" },
-  { name: "Stack", hash: "#stack" },
-  { name: "Contact", hash: "#contact" },
+  { name: "about", hash: "#about" },
+  { name: "work", hash: "#work" },
+  { name: "stack", hash: "#stack" },
+  { name: "contact", hash: "#contact" },
 ];
 
-const PHOTOS = { name: "Photos", to: "/photography" };
+const PHOTOS = { name: "photos", to: "/photography" };
 
 export const NavBar = () => {
   const { pathname } = useLocation();
@@ -120,7 +120,7 @@ export const NavBar = () => {
               rel="noopener noreferrer"
               className="text-sm tracking-wide text-muted-foreground transition-colors duration-200 hover:text-foreground"
             >
-              Resume ↗
+              resume ↗
             </a>
             <ThemeToggle />
           </nav>
@@ -183,7 +183,7 @@ export const NavBar = () => {
             <span className="mono-label">
               {String(sections.length + 2).padStart(2, "0")}
             </span>
-            Resume ↗
+            resume ↗
           </a>
         </nav>
       </div>

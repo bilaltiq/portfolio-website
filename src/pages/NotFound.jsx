@@ -9,7 +9,7 @@ export const NotFound = () => (
       doesn't exist<span className="text-brand">.</span>
     </h1>
     <Link to="/" className="link-line mt-10 text-sm font-medium">
-      ← Back to the index
+      ← back to the index
     </Link>
   </div>
 );

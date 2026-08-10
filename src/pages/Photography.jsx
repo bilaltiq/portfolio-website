@@ -220,7 +220,7 @@ export const Photography = () => {
 
           <div className="mt-16 border-t border-border pt-6">
             <Link to="/" className="link-line text-sm font-medium">
-              ← Back to the index
+              ← back to the index
             </Link>
           </div>
         </section>

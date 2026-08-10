@@ -75,14 +75,14 @@ export const About = () => (
 
         <div className="mt-10 flex flex-wrap items-center gap-8">
           <a href="#contact" className="link-line text-sm font-medium">
-            Get in touch →
+            get in touch →
           </a>
           <a
             href="/Bilal-Tariq-Resume.pdf"
             download
             className="link-line text-sm text-muted-foreground"
           >
-            Download resume ↓
+            download resume ↓
           </a>
         </div>
       </Reveal>
@@ -94,7 +94,7 @@ export const About = () => (
             <dd className="text-sm leading-relaxed">
               Amherst College
               <br />
-              <span className="text-muted-foreground">CS &amp; Math, BA</span>
+              <span className="text-muted-foreground">cs &amp; math, ba</span>
             </dd>
           </div>
           <div>
@@ -108,7 +108,7 @@ export const About = () => (
           <div>
             <dt className="mono-label mb-2">Hats</dt>
             <dd className="text-sm leading-relaxed">
-              Eng &amp; Product
+              eng &amp; product
               <br />
               <span className="text-muted-foreground">…and a touch of design</span>
             </dd>
@@ -116,7 +116,7 @@ export const About = () => (
           <div>
             <dt className="mono-label mb-2">Currently</dt>
             <dd className="text-sm leading-relaxed">
-              Building{" "}
+              building{" "}
               <a
                 href="https://withlayout.com"
                 target="_blank"
