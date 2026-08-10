@@ -88,7 +88,7 @@ const projects = [
 ];
 
 export const Projects = () => (
-  <section id="work" className="container-site pt-14 md:pt-20">
+  <section id="work" className="container-site pt-24 md:pt-32">
     <div className="section-rule mb-8 md:mb-10">
       <h2 className="eyebrow flex items-baseline gap-3">
         Selected Work

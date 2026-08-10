@@ -215,6 +215,24 @@
   }
 }
 
+/* Contact sheet: hovering one frame lets the rest recede, so the eye goes where
+   the pointer is. Sits on the button itself, independent of .reveal's fade-in. */
+.sheet .frame {
+  transition: opacity 0.4s ease;
+}
+.sheet:hover .frame {
+  opacity: 0.45;
+}
+.sheet .frame:hover {
+  opacity: 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sheet:hover .frame {
+    opacity: 1;
+  }
+}
+
 /* Hide the native cursor only where the custom one is actually drawn */
 @media (hover: hover) and (pointer: fine) {
   html.has-custom-cursor,
