@@ -23,7 +23,9 @@ export const EducationBadge = ({ school, detail }) => (
     </span>
     <div className="min-w-0">
       <p className="text-sm font-medium leading-tight tracking-tight">{school}</p>
-      <p className="mono-label mt-0.5 !tracking-[0.12em]">{detail}</p>
+      <p className="mt-0.5 font-serif text-[0.95rem] font-light italic leading-snug text-muted-foreground">
+        {detail}
+      </p>
     </div>
   </div>
 );
