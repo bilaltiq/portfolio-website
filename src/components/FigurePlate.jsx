@@ -2,7 +2,7 @@ import { useEffect, useRef } from "react";
 import portrait from "../assets/portrait.jpg";
 
 /** Where the developed window rests: on the face, a little above centre. */
-const FACE = { x: 49, y: 40 };
+const FACE = { x: 49, y: 44 };
 
 /* Snappy while the pointer is driving, slow on the way home, so leaving the
    plate reads as the window drifting back rather than snapping. */
@@ -82,7 +82,7 @@ export const FigurePlate = () => {
   };
 
   const mask =
-    "radial-gradient(circle at var(--mx, 49%) var(--my, 40%), #000 0, #000 17%, transparent 36%)";
+    "radial-gradient(circle at var(--mx, 49%) var(--my, 44%), #000 0, #000 17%, transparent 36%)";
 
   return (
     <div className="flex h-full w-full flex-col">
