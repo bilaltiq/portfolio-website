@@ -38,9 +38,8 @@ export const Footer = () => (
         </a>
 
         <p className="mt-5 max-w-[34rem] text-sm leading-[1.6] text-muted-foreground">
-          Building something at the seam of ML and product, or need someone who'll
-          write the model and then argue about the roadmap? I reply faster than my
-          builds.
+          Open to conversations about engineering, product, and the space between
+          them. I read everything that comes in.
         </p>
 
         <div className="mt-12 grid grid-cols-2 gap-8 md:mt-16 md:grid-cols-4">

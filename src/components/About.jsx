@@ -64,14 +64,13 @@ export const About = () => (
         </p>
         <p className="mt-6 max-w-[38rem] text-base leading-[1.6] text-muted-foreground">
           That's meant wearing most of the job titles at once. I've written the CUDA
-          kernel and written the spec, run the standup and taken the 2am page. At
-          Finosu I shipped conversation memory sitting behind 1.4M+ calls; at Layout I
-          recruited seven engineers and learned the hard part was never the 3D
-          rendering — it was deciding what not to build.
+          kernel and written the spec. At Finosu I shipped conversation memory sitting
+          behind 1.4M+ calls; at Layout I recruited seven engineers and learned the
+          hard part was never the 3D rendering — it was deciding what not to build.
         </p>
         <p className="mt-4 max-w-[38rem] text-base leading-[1.6] text-muted-foreground">
-          Still the most fun I have is the moment a model stops being confidently
-          wrong.
+          I care how it looks, too. Not as decoration — because the interface is where
+          all the engineering finally has to make sense to someone.
         </p>
 
         <div className="mt-10 flex flex-wrap items-center gap-8">
@@ -109,9 +108,9 @@ export const About = () => (
           <div>
             <dt className="mono-label mb-2">Hats</dt>
             <dd className="text-sm leading-relaxed">
-              SWE &amp; AI/ML
+              Eng &amp; Product
               <br />
-              <span className="text-muted-foreground">PM &amp; TPM when it counts</span>
+              <span className="text-muted-foreground">…and a touch of design</span>
             </dd>
           </div>
           <div>

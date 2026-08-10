@@ -1,5 +1,5 @@
 import { FigurePlate } from "./FigurePlate";
-import { RoleRotator } from "./RoleRotator";
+import { Tagline } from "./Tagline";
 
 const lines = [
   <>
@@ -39,7 +39,7 @@ export const HeroSection = () => (
         className="max-w-[34rem] opacity-0"
         style={{ animation: "fade-up 0.7s ease-out 0.55s forwards" }}
       >
-        <RoleRotator />
+        <Tagline />
 
         <p className="mt-7 text-base leading-[1.5] text-muted-foreground">
           Conversation memory behind 1.4M+ calls at Finosu. CUDA kernels at Google
