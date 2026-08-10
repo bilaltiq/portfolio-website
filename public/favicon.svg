@@ -1,9 +1,21 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
-  <rect width="64" height="64" rx="9" fill="#16140f"/>
-  <g fill="none" stroke="#faf9f6" stroke-width="8">
-    <path d="M14 10 V54"/>
-    <path d="M14 14 H27 a9 9 0 0 1 0 18 H14"/>
-    <path d="M14 32 H29 a9 9 0 0 1 0 18 H14"/>
+  <rect x="1" y="1" width="62" height="62" rx="9" fill="#faf9f6" stroke="#e0dccf" stroke-width="2"/>
+
+  <!-- Draft guides the drawing was built on, left showing. They fall away to
+       nothing at favicon size, so the B still reads at 16px. -->
+  <g stroke="#16140f" opacity="0.16" stroke-width="1" stroke-linecap="round">
+    <path d="M15 5 V59"/>
+    <path d="M7 11 H41"/>
+    <path d="M7 31.7 H43"/>
+    <path d="M7 53 H43"/>
   </g>
-  <circle cx="49" cy="49.5" r="4.5" fill="#be5f45"/>
+
+  <!-- One confident hand-drawn pass, wobbled, overshooting top and bottom -->
+  <g fill="none" stroke="#16140f" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M15.2 8 C14.3 20, 15.8 33, 14.7 56"/>
+    <path d="M15 11 C24 10, 32 12, 34.4 18 C36.6 23.6, 30.6 30.6, 21 31.4 C18.4 31.7, 16.4 31.6, 14.8 31.4"/>
+    <path d="M15 31.8 C24 31.2, 33.4 32.6, 36.4 38.8 C38.9 44.6, 33 52.4, 22.6 52.9 C19.2 53.1, 16.4 53, 14.8 52.8"/>
+  </g>
+
+  <circle cx="47.5" cy="50" r="4.2" fill="#be5f45"/>
 </svg>
