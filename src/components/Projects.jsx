@@ -1,10 +1,10 @@
 import { Reveal } from "./Reveal";
 import { ProjectPlate } from "./ProjectPlate";
-import GAT from "../assets/GAT.png";
+import cad2sketch from "../assets/cad2sketch.svg";
 import noonFS from "../assets/noonFS.png";
 import Crevasse from "../assets/Crevasse.png";
 import goldilocks from "../assets/goldilocks.png";
-import layout from "../assets/layout.png";
+import layout from "../assets/layout.jpg";
 import nn from "../assets/nn.jpg";
 
 const projects = [
@@ -13,18 +13,18 @@ const projects = [
     title: "Layout",
     discipline: "3D Web",
     year: "2024 — Present",
-    plate: "#e6e3dd",
+    plate: "#b09ac0",
     description:
       "A production 3D interior-design SaaS on serverless AWS — auth, Stripe billing, AI furniture generation, and Babylon.js rendering.",
     tags: ["TypeScript", "Next.js", "Babylon.js", "AWS CDK", "DynamoDB"],
     url: "https://withlayout.com",
   },
   {
-    img: GAT,
+    img: cad2sketch,
     title: "CAD 2 Sketch",
     discipline: "Machine Learning",
     year: "2025",
-    plate: "#e9e3d9",
+    plate: "#f2efe6",
     description:
       "A CAD-to-sketch neural rendering pipeline rebuilt around Graph Attention Networks with custom CUDA/C++ ops — 17% faster convergence, 87% to 93% accuracy.",
     tags: ["C++/CUDA", "Python", "PyTorch Geometric"],
