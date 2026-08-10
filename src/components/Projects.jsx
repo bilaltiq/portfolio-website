@@ -1,7 +1,6 @@
 import { Reveal } from "./Reveal";
 import { ProjectPlate } from "./ProjectPlate";
 import cad2sketch from "../assets/cad2sketch.svg";
-import signTranslator from "../assets/signtranslator.svg";
 import amr from "../assets/amr.svg";
 import topics from "../assets/topics.svg";
 import noonFS from "../assets/noonFS.png";
@@ -32,17 +31,6 @@ const projects = [
       "A CAD-to-sketch neural rendering pipeline rebuilt around Graph Attention Networks with custom CUDA/C++ ops — 17% faster convergence, 87% to 93% accuracy.",
     tags: ["C++/CUDA", "Python", "PyTorch Geometric"],
     url: "https://github.com/bilaltiq/Sketch_Nerual_Rendering/tree/Bilal/GAN",
-  },
-  {
-    img: signTranslator,
-    title: "Realtime Sign Translator",
-    discipline: "Computer Vision",
-    year: "2025",
-    plate: "#f2efe6",
-    description:
-      "Real-time translation of American and Pakistani Sign Language from a webcam — MediaPipe hand landmarks feed a random-forest classifier that reads the full alphabet live.",
-    tags: ["Python", "MediaPipe", "OpenCV", "scikit-learn"],
-    url: "https://github.com/bilaltiq/Realtime-Sign-Translator",
   },
   {
     img: noonFS,
