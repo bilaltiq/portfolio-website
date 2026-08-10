@@ -1,4 +1,5 @@
 import { Reveal } from "./Reveal";
+import { MarkWatermark } from "./MarkWatermark";
 import pythonLogo from "../assets/python.png";
 import javaLogo from "../assets/java.png";
 import cLogo from "../assets/c.png";
@@ -47,7 +48,9 @@ const stack = [
 ];
 
 export const TechStack = () => (
-  <section id="stack" className="container-site pt-24 md:pt-32">
+  <section id="stack" className="container-site relative pt-24 md:pt-32">
+    <MarkWatermark side="left" size="52vmin" top="12%" drift={70} />
+
     <div className="section-rule mb-8 md:mb-10">
       <h2 className="eyebrow flex items-baseline gap-3">
         tech stack
