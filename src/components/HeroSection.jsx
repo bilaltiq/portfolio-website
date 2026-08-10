@@ -39,10 +39,9 @@ export const HeroSection = () => (
         style={{ animation: "fade-up 0.7s ease-out 0.55s forwards" }}
       >
         Machine learning, visual computing, and the systems underneath —
-        <br className="hidden sm:block" /> from CAD-to-sketch models at Google Research to
-        satellite
-        <br className="hidden sm:block" /> segmentation over Antarctica. CS &amp; Math at Amherst
-        College.
+        <br className="hidden sm:block" /> from conversation memory behind 1.4M+ calls at Finosu
+        <br className="hidden sm:block" /> to CAD-to-sketch research with Google exploreCSR.
+        <br className="hidden sm:block" /> CS &amp; Math at Amherst College.
       </p>
 
       <div
