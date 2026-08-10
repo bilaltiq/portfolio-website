@@ -7,7 +7,7 @@ const Cap = () => (
     strokeWidth="1.6"
     strokeLinecap="round"
     strokeLinejoin="round"
-    className="size-4 shrink-0"
+    className="size-[0.875rem] shrink-0"
     aria-hidden="true"
   >
     <path d="M2 8.5 12 4l10 4.5-10 4.5z" />
@@ -17,13 +17,13 @@ const Cap = () => (
 );
 
 export const EducationBadge = ({ school, detail }) => (
-  <div className="flex items-center gap-3 rounded-[3px] border border-brand/30 bg-brand/[0.07] px-3.5 py-2.5">
+  <div className="flex items-center gap-2.5 rounded-[3px] border border-brand/30 bg-brand/[0.07] px-3 py-2">
     <span className="text-brand">
       <Cap />
     </span>
     <div className="min-w-0">
-      <p className="text-sm font-medium leading-tight tracking-tight">{school}</p>
-      <p className="mt-0.5 font-serif text-[0.95rem] font-light italic leading-snug text-muted-foreground">
+      <p className="text-[0.8125rem] font-medium leading-tight tracking-tight">{school}</p>
+      <p className="mt-0.5 font-serif text-[0.875rem] font-light italic leading-snug text-muted-foreground">
         {detail}
       </p>
     </div>
