@@ -63,11 +63,11 @@
     --muted-foreground: #76726a;
     --border: #e7e4da;
     --card: #ffffff;
-    --brand: #be5f45;
-    /* Secondary accent. Terracotta stays the interactive colour; this one is
-       atmospheric — washes, duotone, rhythm marks. Kept dusty and red-leaning
-       so it sits in the same warm family rather than fighting it. */
-    --accent: #7b5e8f;
+    /* Primary, interactive: links, stops, underlines, selection. */
+    --brand: #8b6ec4;
+    /* Secondary, atmospheric: washes, duotone, rhythm marks. Deeper so the two
+       purples separate instead of reading as one flat wash. */
+    --accent: #6a4f96;
   }
 
   .dark {
@@ -77,8 +77,8 @@
     --muted-foreground: #a3a098;
     --border: rgba(245, 244, 239, 0.12);
     --card: #1b1a17;
-    --brand: #d2775c;
-    --accent: #a98cc0;
+    --brand: #b49ae6;
+    --accent: #8f74c4;
   }
 
   * {
