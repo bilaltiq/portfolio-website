@@ -90,7 +90,7 @@ export const FigurePlate = () => {
         ref={ref}
         onPointerMove={onPointerMove}
         onPointerLeave={onPointerLeave}
-        data-cursor="Develop"
+        data-cursor="develop"
         className="relative aspect-square w-full overflow-hidden rounded-[3px] border border-border bg-muted"
         style={{ "--mx": `${FACE.x}%`, "--my": `${FACE.y}%` }}
       >
@@ -135,8 +135,8 @@ export const FigurePlate = () => {
       </div>
 
       <div className="mt-3 flex items-baseline justify-between border-t border-border pt-3">
-        <span className="mono-label">Fig. 01 — Signal / Form</span>
-        <span className="mono-label hidden sm:inline">Cursor develops. Try it.</span>
+        <span className="mono-label">fig. 01 — signal / form</span>
+        <span className="mono-label hidden sm:inline">cursor develops. try it.</span>
       </div>
     </div>
   );

@@ -137,13 +137,14 @@
   }
 }
 
-/* Small uppercase monospace caption — the workhorse label of the whole site */
+/* Small monospace caption — the workhorse label of the whole site. No
+   text-transform: strings render as authored, so labels can sit lowercase while
+   project titles and job roles keep their own capitals. */
 @utility mono-label {
   font-family: var(--font-mono);
   font-size: 11px;
   font-weight: 500;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
+  letter-spacing: 0.16em;
   color: var(--muted-foreground);
 }
 
@@ -181,8 +182,7 @@
 @utility eyebrow {
   font-size: 0.875rem;
   font-weight: 600;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
+  letter-spacing: 0.2em;
 }
 
 @utility ticker-track {

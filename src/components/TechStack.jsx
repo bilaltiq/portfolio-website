@@ -14,46 +14,46 @@ import JSLogo from "../assets/JS.png";
    résumé's skill list, which has no icons and reads better as type anyway. */
 const categories = [
   {
-    label: "Languages",
+    label: "languages",
     items: "C++, C, Python, Java, TypeScript/JavaScript, SQL, RISC-V Assembly",
   },
   {
-    label: "Systems & Distributed",
+    label: "systems & distributed",
     items:
       "Linux, Concurrency, Memory Management, CUDA, Networking, Cryptography, Docker, AWS (Lambda, DynamoDB, S3, API Gateway, Cognito), PostgreSQL, GitHub Actions CI/CD",
   },
   {
-    label: "ML & NLP",
+    label: "ml & nlp",
     items:
       "PyTorch, TensorFlow, Keras, PyTorch Geometric, HuggingFace Transformers, LLM tool-calling & retrieval",
   },
   {
-    label: "AI Development Tools",
+    label: "ai development tools",
     items: "Claude Code, Cursor, GitHub Copilot, OpenAI & Anthropic APIs",
   },
 ];
 
 const stack = [
-  { name: "Python", use: "AI & ML", src: pythonLogo },
-  { name: "Java", use: "App Development", src: javaLogo },
-  { name: "C / C++", use: "Embedded Systems", src: cLogo },
-  { name: "TypeScript", use: "Web Development", src: tsLogo },
-  { name: "React", use: "Frontend Framework", src: reactLogo },
-  { name: "MySQL", use: "Databases", src: sqlLogo },
-  { name: "Node.js", use: "Backend", src: nodejsLogo },
-  { name: "Tailwind", use: "Frontend Design", src: tailwindLogo },
-  { name: "JavaScript", use: "Core Web Language", src: JSLogo },
-  { name: "Git", use: "Well… it's Git", src: gitLogo },
+  { name: "Python", use: "ai & ml", src: pythonLogo },
+  { name: "Java", use: "app development", src: javaLogo },
+  { name: "C / C++", use: "embedded systems", src: cLogo },
+  { name: "TypeScript", use: "web development", src: tsLogo },
+  { name: "React", use: "frontend framework", src: reactLogo },
+  { name: "MySQL", use: "databases", src: sqlLogo },
+  { name: "Node.js", use: "backend", src: nodejsLogo },
+  { name: "Tailwind", use: "frontend design", src: tailwindLogo },
+  { name: "JavaScript", use: "core web language", src: JSLogo },
+  { name: "Git", use: "well… it's git", src: gitLogo },
 ];
 
 export const TechStack = () => (
   <section id="stack" className="container-site pt-24 md:pt-32">
     <div className="section-rule mb-8 md:mb-10">
       <h2 className="eyebrow flex items-baseline gap-3">
-        Tech Stack
+        tech stack
         <span className="mono-label">({stack.length})</span>
       </h2>
-      <span className="mono-label">What I reach for</span>
+      <span className="mono-label">what i reach for</span>
     </div>
 
     {/* Single-hairline grid: collapse the gap and let cell borders overlap */}

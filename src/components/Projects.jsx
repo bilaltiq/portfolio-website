@@ -18,7 +18,7 @@ const projects = [
     year: "2024 — Present",
     plate: "#8d7aa4",
     description:
-      "A production 3D interior-design SaaS on serverless AWS — auth, Stripe billing, AI furniture generation, and Babylon.js rendering.",
+      "A 3D interior design tool I started with friends. Serverless AWS underneath, Stripe for billing, AI furniture generation, and Babylon.js doing the rendering.",
     tags: ["TypeScript", "Next.js", "Babylon.js", "AWS CDK", "DynamoDB"],
     url: "https://withlayout.com",
   },
@@ -29,7 +29,7 @@ const projects = [
     year: "2025",
     plate: "#f2efe6",
     description:
-      "A CAD-to-sketch neural rendering pipeline rebuilt around Graph Attention Networks with custom CUDA/C++ ops — 17% faster convergence, 87% to 93% accuracy.",
+      "Turning CAD models into clean line drawings using graph attention networks. I rewrote the pipeline with custom CUDA ops, which made it 17% faster to train and took accuracy from 87% to 93%.",
     tags: ["C++/CUDA", "Python", "PyTorch Geometric"],
     url: "https://github.com/bilaltiq/Sketch_Nerual_Rendering/tree/Bilal/GAN",
   },
@@ -40,7 +40,7 @@ const projects = [
     year: "2026",
     plate: "#f2efe6",
     description:
-      "Do sequence models actually beat classical baselines at forecasting SPY volatility? Under expanding-window walk-forward evaluation, LSTM led the deep models but Elastic Net and XGBoost still won — and no allocation strategy beat buy-and-hold. AIT Budapest final project.",
+      "Can deep sequence models forecast SPY volatility better than plain baselines? Mostly no. LSTM was the best of the deep ones, Elastic Net and XGBoost still beat it, and nothing we tried beat just holding SPY. Final project at AIT Budapest.",
     tags: ["PyTorch", "LSTM", "XGBoost", "Optuna"],
     url: "/Deep-Learning-Volatility-Prediction.pdf",
     external: false,
@@ -52,7 +52,7 @@ const projects = [
     year: "2025",
     plate: "#1a1a18",
     description:
-      "A hand-written bootloader reaching supervisor mode in under 150ms, and a kernel with 4KB-page virtual memory, demand paging, and interrupt handling — plus NoonFS, a crash-safe journaling file system that recovered cleanly across every simulated power-loss trial.",
+      "A bootloader and kernel written from scratch on RISC-V. It reaches supervisor mode in under 150ms and handles 4KB paging, demand paging and interrupts. NoonFS sits on top and came back clean from every simulated power loss I threw at it.",
     tags: ["C/C++", "RISC-V Assembly", "Linux"],
     url: "https://github.com/bilaltiq/NoonFS",
   },
@@ -63,7 +63,7 @@ const projects = [
     year: "2025",
     plate: "#f2efe6",
     description:
-      "A client–server file-transfer protocol across 5 sub-protocols and 7 remote commands, hardened against eavesdropping, tampering, and replay with sequence numbers, per-message nonces, and MAC verification.",
+      "A file transfer protocol built up from crypto primitives: 5 sub-protocols, 7 commands, AES-GCM for encryption and RSA for key exchange. Sequence numbers and per-message nonces handle replay.",
     tags: ["Python", "AES-256-GCM", "RSA-OAEP", "HKDF", "TCP Sockets"],
     url: "https://github.com/bilaltiq",
   },
@@ -74,7 +74,7 @@ const projects = [
     year: "2024",
     plate: "#2b3a4a",
     description:
-      "A UNet++ pipeline that segments crevasses in Sentinel-1 imagery, raising accuracy from 92.8% to 99.1%.",
+      "Finding crevasses in Antarctic satellite imagery with a UNet++ segmentation model. Accuracy went from 92.8% to 99.1%.",
     tags: ["Python", "TensorFlow", "Keras", "NumPy"],
     url: "https://github.com/bilaltiq/UNet-Crevasse-Identifier",
   },
@@ -85,7 +85,7 @@ const projects = [
     year: "2025",
     plate: "#f2efe6",
     description:
-      "Probing what multilingual BERT actually encodes, by testing its sentence embeddings against AMR semantic-graph features across the MASSIVE dataset.",
+      "Poking at what multilingual BERT actually learns, by checking its sentence embeddings against AMR semantic graphs on the MASSIVE dataset.",
     tags: ["Python", "PyTorch", "HuggingFace Transformers"],
     url: "https://github.com/bilaltiq/Interpretable-Multilingual-AMR",
   },
@@ -96,7 +96,7 @@ const projects = [
     year: "2024",
     plate: "#f2efe6",
     description:
-      "LDA topic modelling and sentiment analysis over UNESCO misinformation datasets, with a Shiny Leaflet map plotting case data alongside the narratives spreading around it.",
+      "Topic modelling and sentiment analysis on UNESCO misinformation data, plus a Shiny map that puts case counts next to the stories going around them.",
     tags: ["R", "LDA", "Shiny", "Leaflet"],
     url: "https://github.com/bilaltiq/COVID-Misinformation-Analyzer",
   },
@@ -107,7 +107,7 @@ const projects = [
     year: "2024",
     plate: "#f2efe6",
     description:
-      "A fully functional neural network written from scratch with no external libraries.",
+      "A working neural network in Java with no libraries at all, down to the linear algebra. It reads handwritten digits.",
     tags: ["Java"],
     url: "https://github.com/bilaltiq/JavaNeuralNetwork",
   },
@@ -118,7 +118,7 @@ const projects = [
     year: "2023",
     plate: "#f2efe6",
     description:
-      "An infinite, procedurally generated universe to explore in search of one mythical planet.",
+      "A 2D space game with a procedurally generated universe. You fly around looking for one planet that may or may not be out there.",
     tags: ["Java"],
     url: "https://github.com/sergleonov/goldilocksgame",
   },
@@ -128,10 +128,10 @@ export const Projects = () => (
   <section id="work" className="container-site pt-24 md:pt-32">
     <div className="section-rule mb-8 md:mb-10">
       <h2 className="eyebrow flex items-baseline gap-3">
-        Selected Work
+        selected work
         <span className="mono-label">({String(projects.length).padStart(2, "0")})</span>
       </h2>
-      <span className="mono-label">2023 — Present</span>
+      <span className="mono-label">2023 — present</span>
     </div>
 
     <div className="grid gap-y-10 md:grid-cols-2 md:gap-x-5 md:gap-y-12">
@@ -141,7 +141,7 @@ export const Projects = () => (
             href={project.url}
             target="_blank"
             rel="noopener noreferrer"
-            data-cursor={project.external === false ? "Read" : "View"}
+            data-cursor={project.external === false ? "read" : "view"}
             className="group block"
           >
             <div

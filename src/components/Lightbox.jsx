@@ -36,7 +36,7 @@ export const Lightbox = ({ photo, index, total, onClose, onStep }) => {
     >
       <div className="container-site flex shrink-0 items-center justify-between py-5">
         <span className="mono-label">
-          Frame {frameNo(index)} / {frameNo(total - 1)}
+          frame {frameNo(index)} / {frameNo(total - 1)}
         </span>
         <button
           ref={closeRef}
@@ -44,7 +44,7 @@ export const Lightbox = ({ photo, index, total, onClose, onStep }) => {
           onClick={onClose}
           className="mono-label !text-foreground transition-colors hover:!text-brand"
         >
-          Close ✕
+          close ✕
         </button>
       </div>
 
@@ -66,7 +66,7 @@ export const Lightbox = ({ photo, index, total, onClose, onStep }) => {
       >
         <div>
           <p className="text-sm font-medium tracking-tight">
-            {photo.title ?? `Frame ${frameNo(index)}`}
+            {photo.title ?? `frame ${frameNo(index)}`}
           </p>
           {caption && <p className="mono-label mt-1">{caption}</p>}
         </div>
@@ -79,7 +79,7 @@ export const Lightbox = ({ photo, index, total, onClose, onStep }) => {
               aria-label="Previous photo"
               className="mono-label !text-foreground transition-colors hover:!text-brand"
             >
-              ← Prev
+              ← prev
             </button>
             <button
               type="button"
@@ -87,7 +87,7 @@ export const Lightbox = ({ photo, index, total, onClose, onStep }) => {
               aria-label="Next photo"
               className="mono-label !text-foreground transition-colors hover:!text-brand"
             >
-              Next →
+              next →
             </button>
           </div>
         )}

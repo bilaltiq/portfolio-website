@@ -32,7 +32,7 @@ export const ThemeToggle = ({ className }) => {
         className
       )}
     >
-      {isDark ? "Light" : "Dark"}
+      {isDark ? "light" : "dark"}
     </button>
   );
 };
