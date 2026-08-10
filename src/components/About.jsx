@@ -52,7 +52,7 @@ export const About = () => (
         About
         <span className="mono-label">(The long version)</span>
       </h2>
-      <span className="mono-label">Amherst, MA</span>
+      <span className="mono-label">New York, NY</span>
     </div>
 
     <div className="grid gap-12 md:grid-cols-12 md:gap-10">

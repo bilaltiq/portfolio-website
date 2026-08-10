@@ -5,6 +5,7 @@ import { ThemeToggle } from "./ThemeToggle";
 const navItems = [
   { name: "Work", href: "#work" },
   { name: "About", href: "#about" },
+  { name: "Photos", href: "#photography" },
   { name: "Stack", href: "#stack" },
   { name: "Contact", href: "#contact" },
 ];
@@ -64,7 +65,7 @@ export const NavBar = () => {
           <a href="#top" className="group flex items-baseline gap-2">
             <span className="eyebrow">Bilal Tariq</span>
             <span className="mono-label hidden transition-colors group-hover:!text-brand sm:inline">
-              (AMH)
+              (NYC)
             </span>
           </a>
 
@@ -140,7 +141,9 @@ export const NavBar = () => {
             onClick={() => setIsMenuOpen(false)}
             className="flex items-baseline gap-4 border-b border-border pb-4 text-3xl font-medium tracking-tight"
           >
-            <span className="mono-label">05</span>
+            <span className="mono-label">
+              {String(navItems.length + 1).padStart(2, "0")}
+            </span>
             Resume ↗
           </a>
         </nav>

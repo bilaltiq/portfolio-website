@@ -4,6 +4,7 @@ import { HeroSection } from "../components/HeroSection";
 import { Ticker } from "../components/Ticker";
 import { Projects } from "../components/Projects";
 import { About } from "../components/About";
+import { Photography } from "../components/Photography";
 import { TechStack } from "../components/TechStack";
 import { Footer } from "../components/Footer";
 
@@ -17,6 +18,7 @@ export const Home = () => (
       <Ticker />
       <Projects />
       <About />
+      <Photography />
       <TechStack />
     </main>
 

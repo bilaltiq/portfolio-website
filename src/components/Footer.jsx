@@ -12,7 +12,7 @@ const meta = [
     value: "mbtoshq ↗",
     href: "https://www.instagram.com/mbtoshq/",
   },
-  { label: "Location", value: "Amherst, MA" },
+  { label: "Location", value: "New York, NY" },
 ];
 
 export const Footer = () => (
