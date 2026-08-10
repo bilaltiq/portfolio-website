@@ -15,7 +15,11 @@ const Row = ({ hidden }) => (
     {[...items, ...items, ...items].map((item, i) => (
       <span key={i} className="flex items-center">
         <span className="mono-label !text-foreground/70 px-6">{item}</span>
-        <span className="size-1 rounded-full bg-brand" aria-hidden="true" />
+        {/* Alternating separators give the strip a two-beat rhythm */}
+        <span
+          className={`size-1 rounded-full ${i % 2 ? "bg-accent" : "bg-brand"}`}
+          aria-hidden="true"
+        />
       </span>
     ))}
   </div>

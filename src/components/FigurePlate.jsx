@@ -40,7 +40,11 @@ export const FigurePlate = () => {
           alt="Bilal Tariq"
           className="absolute inset-0 h-full w-full object-cover opacity-90 grayscale contrast-[1.15] transition-opacity duration-500"
         />
-        <div className="absolute inset-0 bg-brand/30 mix-blend-color" />
+        {/* Duotone, and order matters: `color` replaces both hue and saturation,
+            so the terracotta pass has to land first or it wipes out the plum.
+            The plum then multiplies back in, biting hardest in the midtones. */}
+        <div className="absolute inset-0 bg-brand/28 mix-blend-color" />
+        <div className="absolute inset-0 bg-accent/22 mix-blend-multiply" />
 
         {/* Developed window: full-contrast image revealed under the pointer */}
         <img

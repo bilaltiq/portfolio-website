@@ -1,6 +1,9 @@
 import { Reveal } from "./Reveal";
 import { ProjectPlate } from "./ProjectPlate";
 import cad2sketch from "../assets/cad2sketch.svg";
+import signTranslator from "../assets/signtranslator.svg";
+import amr from "../assets/amr.svg";
+import topics from "../assets/topics.svg";
 import noonFS from "../assets/noonFS.png";
 import Crevasse from "../assets/Crevasse.png";
 import goldilocks from "../assets/goldilocks.png";
@@ -29,6 +32,17 @@ const projects = [
       "A CAD-to-sketch neural rendering pipeline rebuilt around Graph Attention Networks with custom CUDA/C++ ops — 17% faster convergence, 87% to 93% accuracy.",
     tags: ["C++/CUDA", "Python", "PyTorch Geometric"],
     url: "https://github.com/bilaltiq/Sketch_Nerual_Rendering/tree/Bilal/GAN",
+  },
+  {
+    img: signTranslator,
+    title: "Realtime Sign Translator",
+    discipline: "Computer Vision",
+    year: "2025",
+    plate: "#f2efe6",
+    description:
+      "Real-time translation of American and Pakistani Sign Language from a webcam — MediaPipe hand landmarks feed a random-forest classifier that reads the full alphabet live.",
+    tags: ["Python", "MediaPipe", "OpenCV", "scikit-learn"],
+    url: "https://github.com/bilaltiq/Realtime-Sign-Translator",
   },
   {
     img: noonFS,
@@ -62,6 +76,28 @@ const projects = [
       "A UNet++ pipeline that segments crevasses in Sentinel-1 imagery, raising accuracy from 92.8% to 99.1%.",
     tags: ["Python", "TensorFlow", "Keras", "NumPy"],
     url: "https://github.com/bilaltiq/UNet-Crevasse-Identifier",
+  },
+  {
+    img: amr,
+    title: "Interpretable Multilingual AMR",
+    discipline: "NLP Research",
+    year: "2025",
+    plate: "#f2efe6",
+    description:
+      "Probing what multilingual BERT actually encodes, by testing its sentence embeddings against AMR semantic-graph features across the MASSIVE dataset.",
+    tags: ["Python", "PyTorch", "HuggingFace Transformers"],
+    url: "https://github.com/bilaltiq/Interpretable-Multilingual-AMR",
+  },
+  {
+    img: topics,
+    title: "COVID Misinformation Analyzer",
+    discipline: "Data Science",
+    year: "2024",
+    plate: "#f2efe6",
+    description:
+      "LDA topic modelling and sentiment analysis over UNESCO misinformation datasets, with a Shiny Leaflet map plotting case data alongside the narratives spreading around it.",
+    tags: ["R", "LDA", "Shiny", "Leaflet"],
+    url: "https://github.com/bilaltiq/COVID-Misinformation-Analyzer",
   },
   {
     img: nn,

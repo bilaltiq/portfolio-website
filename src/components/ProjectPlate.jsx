@@ -19,7 +19,7 @@ export const ProjectPlate = ({ glyph, caption }) => (
       className="absolute inset-0"
       style={{
         background:
-          "radial-gradient(120% 90% at 50% 0%, color-mix(in srgb, var(--brand) 14%, transparent), transparent 70%)",
+          "radial-gradient(120% 90% at 50% 0%, color-mix(in srgb, var(--accent) 18%, transparent), transparent 70%)",
       }}
     />
 
