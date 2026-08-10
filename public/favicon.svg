@@ -1,21 +1,18 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
   <rect x="1" y="1" width="62" height="62" rx="9" fill="#faf9f6" stroke="#e0dccf" stroke-width="2"/>
 
-  <!-- Draft guides the drawing was built on, left showing. They fall away to
-       nothing at favicon size, so the B still reads at 16px. -->
-  <g stroke="#16140f" opacity="0.16" stroke-width="1" stroke-linecap="round">
-    <path d="M15 5 V59"/>
-    <path d="M7 11 H41"/>
-    <path d="M7 31.7 H43"/>
-    <path d="M7 53 H43"/>
+  <!-- Hollow letterform, like the footer wordmark: the B is its own contour
+       rather than a drawn skeleton. Each run is an open stroke that overshoots
+       its neighbour, so the corners read as drawn rather than constructed. -->
+  <g fill="none" stroke="#16140f" stroke-width="3.1" stroke-linecap="round" stroke-linejoin="round" transform="translate(5.5 0)">
+    <!-- Stem -->
+    <path d="M12.6 8.4 C11.9 20, 12.9 34, 12.1 55.6"/>
+    <!-- Top edge into the upper bowl, closing back on the stem -->
+    <path d="M10.4 10.3 L28.1 9.7 C34.7 10.3, 38.5 14, 38.2 20.7 C38 27.3, 34.1 31.5, 27.5 31.2 L10.9 31.6"/>
+    <!-- Lower bowl and the foot -->
+    <path d="M12.1 30.8 L29.5 31.5 C36.5 31.2, 42.4 35.9, 42.1 42.7 C42 49.7, 36.2 54.5, 29.1 54.2 L10.6 53.7"/>
+    <!-- Counters, drawn as their own loops the way you'd cut them by hand -->
+    <path d="M20.6 16.3 L27.3 15.8 C31.3 16.2, 33 18.3, 32.7 20.8 C32.6 23.3, 31 25.9, 26.9 25.6 L20.4 26"/>
+    <path d="M20.6 36.7 L29.1 36.2 C33.7 36.6, 36.3 39.3, 36 42.7 C35.9 46.2, 33.3 48.9, 28.7 48.6 L20.4 49"/>
   </g>
-
-  <!-- One confident hand-drawn pass, wobbled, overshooting top and bottom -->
-  <g fill="none" stroke="#16140f" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round">
-    <path d="M15.2 8 C14.3 20, 15.8 33, 14.7 56"/>
-    <path d="M15 11 C24 10, 32 12, 34.4 18 C36.6 23.6, 30.6 30.6, 21 31.4 C18.4 31.7, 16.4 31.6, 14.8 31.4"/>
-    <path d="M15 31.8 C24 31.2, 33.4 32.6, 36.4 38.8 C38.9 44.6, 33 52.4, 22.6 52.9 C19.2 53.1, 16.4 53, 14.8 52.8"/>
-  </g>
-
-  <circle cx="47.5" cy="50" r="4.2" fill="#be5f45"/>
 </svg>
