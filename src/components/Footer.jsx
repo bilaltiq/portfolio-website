@@ -84,7 +84,7 @@ export const Footer = () => (
     <div className="border-t border-border">
       <div className="container-site flex flex-col gap-2 py-5 font-mono text-[11px] uppercase tracking-[0.14em] text-muted-foreground md:flex-row md:items-center md:justify-between">
         <p>© {new Date().getFullYear()} Bilal Tariq — All rights reserved</p>
-        <p>Type: Inter · IBM Plex Mono</p>
+        <p>Type: Inter · IBM Plex Mono · Newsreader</p>
       </div>
     </div>
   </footer>
