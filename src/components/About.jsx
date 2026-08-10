@@ -7,10 +7,10 @@ const experience = [
     place: "New York, NY",
     period: "Jun — Aug 2026",
     notes: [
-      "Built the unified conversation-memory system now running behind 1.4M+ calls, compressing multi-call history into prompt-sized rolling summaries with live-state reconciliation and shadow-mode rollout — call-quality scores up 70% in the LendPop pilot.",
-      "Shipped tool-calling AI chatbots to 12 lenders' borrower portals serving 60,000+ customers, with an agent tool layer that grounds replies in real-time account state rather than static prompt text.",
-      "Engineered a login-triggered outbound-call service whose A/B rollout correlated with a 4× increase in on-time loan repayments.",
-      "Collapsed inbound and outbound voice agents onto one shared configuration library, enabling deploy-free LLM/STT/TTS model swaps, and closed a 15-CVE security sweep.",
+      "Built the unified conversation-memory system behind 1.4M+ calls, now live for every borrower. It compresses multi-call history into prompt-sized rolling summaries with live-state reconciliation, and a shadow-mode A/B put mean call-quality score 70% above the previous pipeline.",
+      "Shipped tool-calling AI chatbots across 12 lenders' borrower portals serving 151.6K customers, owning the agent tool layer — persistent knowledge memory plus S3 document and live database tool calls — so replies resolve against the borrower's real account state instead of static prompt text.",
+      "Shipped two production LLM services: a login-triggered outbound-call service whose A/B rollout measured 4× on-time loan repayment against control, and a chained-LLM triage pipeline that auto-escalates post-call issues and removed about 40 analyst hours a week of manual QA.",
+      "Consolidated inbound and outbound voice agents onto one configuration library, so LLM/STT/TTS swaps and live model A/B comparison no longer need a deploy. Also closed a 15-CVE sweep that hardened unauthenticated admin endpoints over borrower data.",
     ],
   },
   {

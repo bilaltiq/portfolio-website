@@ -81,13 +81,13 @@ const projects = [
   },
   {
     img: amr,
-    title: "Interpretable Multilingual AMR",
+    title: "Probing Multilingual LLMs",
     discipline: "NLP Research",
     year: "2025",
     plate: "#f2efe6",
     description:
-      "Poking at what multilingual BERT actually learns, by checking its sentence embeddings against AMR semantic graphs on the MASSIVE dataset.",
-    tags: ["Python", "PyTorch", "HuggingFace Transformers"],
+      "Trained 6,500+ layer-wise linear probes across BERT, mBERT and XLM-R in 50 languages, to find where AMR semantic roles actually become readable. Agent roles hit 0.90 accuracy, and it turns out multilingual encoders hold semantics about 5 layers deeper for lower-resource languages than for English.",
+    tags: ["PyTorch", "HuggingFace Transformers", "scikit-learn"],
     url: "https://github.com/bilaltiq/Interpretable-Multilingual-AMR",
   },
   {
