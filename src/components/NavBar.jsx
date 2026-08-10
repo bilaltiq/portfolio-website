@@ -87,7 +87,7 @@ export const NavBar = () => {
               </a>
             ))}
             <a
-              href="/Bilal Tariq - Intern Resume 2025.pdf"
+              href="/Bilal-Tariq-Resume.pdf"
               target="_blank"
               rel="noopener noreferrer"
               className="text-sm tracking-wide text-muted-foreground transition-colors duration-200 hover:text-foreground"
@@ -134,7 +134,7 @@ export const NavBar = () => {
             </a>
           ))}
           <a
-            href="/Bilal Tariq - Intern Resume 2025.pdf"
+            href="/Bilal-Tariq-Resume.pdf"
             target="_blank"
             rel="noopener noreferrer"
             onClick={() => setIsMenuOpen(false)}

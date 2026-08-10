@@ -10,6 +10,29 @@ import tailwindLogo from "../assets/tailwind.png";
 import gitLogo from "../assets/git.png";
 import JSLogo from "../assets/JS.png";
 
+/* The logo grid covers the day-to-day tools; this table carries the rest of the
+   résumé's skill list, which has no icons and reads better as type anyway. */
+const categories = [
+  {
+    label: "Languages",
+    items: "C++, C, Python, Java, TypeScript/JavaScript, SQL, RISC-V Assembly",
+  },
+  {
+    label: "Systems & Distributed",
+    items:
+      "Linux, Concurrency, Memory Management, CUDA, Networking, Cryptography, Docker, AWS (Lambda, DynamoDB, S3, API Gateway, Cognito), PostgreSQL, GitHub Actions CI/CD",
+  },
+  {
+    label: "ML & NLP",
+    items:
+      "PyTorch, TensorFlow, Keras, PyTorch Geometric, HuggingFace Transformers, LLM tool-calling & retrieval",
+  },
+  {
+    label: "AI Development Tools",
+    items: "Claude Code, Cursor, GitHub Copilot, OpenAI & Anthropic APIs",
+  },
+];
+
 const stack = [
   { name: "Python", use: "AI & ML", src: pythonLogo },
   { name: "Java", use: "App Development", src: javaLogo },
@@ -58,5 +81,20 @@ export const TechStack = () => (
         </Reveal>
       ))}
     </div>
+
+    <dl className="mt-14 md:mt-20">
+      {categories.map((category, i) => (
+        <Reveal
+          key={category.label}
+          delay={i * 60}
+          className="grid gap-2 border-b border-border py-5 md:grid-cols-12 md:gap-6"
+        >
+          <dt className="mono-label md:col-span-3">{category.label}</dt>
+          <dd className="text-sm leading-[1.6] text-muted-foreground md:col-span-9">
+            {category.items}
+          </dd>
+        </Reveal>
+      ))}
+    </dl>
   </section>
 );

@@ -1,10 +1,12 @@
 const items = [
   "Machine Learning",
   "Visual Computing",
+  "Distributed Systems",
+  "LLM Tool-Calling",
   "Computer Vision",
+  "Cryptography",
   "3D Graphics",
   "Full-Stack",
-  "Systems",
   "Research",
 ];
 

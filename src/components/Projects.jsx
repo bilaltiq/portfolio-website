@@ -1,4 +1,5 @@
 import { Reveal } from "./Reveal";
+import { ProjectPlate } from "./ProjectPlate";
 import GAT from "../assets/GAT.png";
 import noonFS from "../assets/noonFS.png";
 import Crevasse from "../assets/Crevasse.png";
@@ -8,48 +9,59 @@ import nn from "../assets/nn.jpg";
 
 const projects = [
   {
+    img: layout,
+    title: "Layout",
+    discipline: "3D Web",
+    year: "2024 — Present",
+    plate: "#e6e3dd",
+    description:
+      "A production 3D interior-design SaaS on serverless AWS — auth, Stripe billing, AI furniture generation, and Babylon.js rendering.",
+    tags: ["TypeScript", "Next.js", "Babylon.js", "AWS CDK", "DynamoDB"],
+    url: "https://withlayout.com",
+  },
+  {
     img: GAT,
     title: "CAD 2 Sketch",
     discipline: "Machine Learning",
     year: "2025",
     plate: "#e9e3d9",
     description:
-      "Graph Attention Networks that select mesh lines from CAD models and turn them into clean sketches.",
-    tags: ["Python", "PyTorch", "NumPy"],
+      "A CAD-to-sketch neural rendering pipeline rebuilt around Graph Attention Networks with custom CUDA/C++ ops — 17% faster convergence, 87% to 93% accuracy.",
+    tags: ["C++/CUDA", "Python", "PyTorch Geometric"],
     url: "https://github.com/bilaltiq/Sketch_Nerual_Rendering/tree/Bilal/GAN",
+  },
+  {
+    img: noonFS,
+    title: "Bare-Metal Operating System",
+    discipline: "Systems",
+    year: "2025",
+    plate: "#1a1a18",
+    description:
+      "A hand-written bootloader reaching supervisor mode in under 150ms, and a kernel with 4KB-page virtual memory, demand paging, and interrupt handling — plus NoonFS, a crash-safe journaling file system that recovered cleanly across every simulated power-loss trial.",
+    tags: ["C/C++", "RISC-V Assembly", "Linux"],
+    url: "https://github.com/bilaltiq/NoonFS",
+  },
+  {
+    glyph: "SiFT",
+    plateCaption: "Secure File Transfer",
+    title: "SiFT — Secure File Transfer",
+    discipline: "Cryptography",
+    year: "2025",
+    description:
+      "A client–server file-transfer protocol across 5 sub-protocols and 7 remote commands, hardened against eavesdropping, tampering, and replay with sequence numbers, per-message nonces, and MAC verification.",
+    tags: ["Python", "AES-256-GCM", "RSA-OAEP", "HKDF", "TCP Sockets"],
+    url: "https://github.com/bilaltiq",
   },
   {
     img: Crevasse,
     title: "Antarctic Crevasse Detection",
     discipline: "Computer Vision",
-    year: "2025",
+    year: "2024",
     plate: "#dfe4e8",
     description:
       "A UNet++ pipeline that segments crevasses in Sentinel-1 imagery, raising accuracy from 92.8% to 99.1%.",
     tags: ["Python", "TensorFlow", "Keras", "NumPy"],
     url: "https://github.com/bilaltiq/UNet-Crevasse-Identifier",
-  },
-  {
-    img: layout,
-    title: "Layout",
-    discipline: "3D Web",
-    year: "2024",
-    plate: "#e6e3dd",
-    description:
-      "A 3D apartment visualization platform that lets customers furnish a space before they buy it.",
-    tags: ["React", "TypeScript", "Babylon", "Next.js", "Firebase"],
-    url: "https://layout--layout-58451.us-central1.hosted.app/design/1qX1j05ZFqYuvUol8uCI",
-  },
-  {
-    img: noonFS,
-    title: "Noon File System",
-    discipline: "Systems",
-    year: "2024",
-    plate: "#1a1a18",
-    description:
-      "A file system built from the ground up — custom kernel, BIOS, and memory management.",
-    tags: ["RISC-V Assembly", "C"],
-    url: "https://github.com/bilaltiq/NoonFS",
   },
   {
     img: nn,
@@ -82,7 +94,7 @@ export const Projects = () => (
         Selected Work
         <span className="mono-label">({String(projects.length).padStart(2, "0")})</span>
       </h2>
-      <span className="mono-label">2023 — 2025</span>
+      <span className="mono-label">2023 — Present</span>
     </div>
 
     <div className="grid gap-y-10 md:grid-cols-2 md:gap-x-5 md:gap-y-12">
@@ -99,12 +111,18 @@ export const Projects = () => (
               className="relative aspect-[4/3] overflow-hidden rounded-[3px]"
               style={{ backgroundColor: project.plate }}
             >
-              <img
-                src={project.img}
-                alt={project.title}
-                loading="lazy"
-                className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.025]"
-              />
+              {project.img ? (
+                <img
+                  src={project.img}
+                  alt={project.title}
+                  loading="lazy"
+                  className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.025]"
+                />
+              ) : (
+                <div className="absolute inset-0 transition-transform duration-700 ease-out group-hover:scale-[1.025]">
+                  <ProjectPlate glyph={project.glyph} caption={project.plateCaption} />
+                </div>
+              )}
             </div>
 
             <div className="mt-3 flex items-baseline justify-between gap-4">
