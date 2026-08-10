@@ -188,7 +188,7 @@ export const Projects = () => (
         rel="noopener noreferrer"
         className="link-line text-sm font-medium"
       >
-        Everything else on GitHub ↗
+        everything else on GitHub ↗
       </a>
     </Reveal>
   </section>

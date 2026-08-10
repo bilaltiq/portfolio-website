@@ -49,8 +49,8 @@ export const HeroSection = () => (
         </p>
 
         <div className="mt-5 flex flex-col gap-2.5 sm:max-w-[24rem]">
-          <EducationBadge school="Amherst College" detail="CS & Math, BA — May 2027" />
-          <EducationBadge school="AIT Budapest" detail="Computer Science — Study Abroad" />
+          <EducationBadge school="Amherst College" detail="cs & math, ba — may 2027" />
+          <EducationBadge school="AIT Budapest" detail="computer science — study abroad" />
         </div>
       </div>
 
@@ -59,10 +59,10 @@ export const HeroSection = () => (
         style={{ animation: "fade-up 0.7s ease-out 0.68s forwards" }}
       >
         <a href="#work" className="link-line text-sm font-medium">
-          Selected work ↓
+          selected work ↓
         </a>
         <a href="#about" className="link-line text-sm text-muted-foreground">
-          About me →
+          about me →
         </a>
       </div>
     </div>
