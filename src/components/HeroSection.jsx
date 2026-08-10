@@ -1,4 +1,5 @@
 import { FigurePlate } from "./FigurePlate";
+import { EducationBadge } from "./EducationBadge";
 
 const lines = [
   <>
@@ -22,7 +23,7 @@ export const HeroSection = () => (
         className="mono-label mb-6 opacity-0"
         style={{ animation: "fade-up 0.7s ease-out 0.1s forwards" }}
       >
-        Bilal Tariq — Software Engineer, NYC
+        Bilal Tariq — NYC
       </p>
 
       <h1 className="text-[clamp(2.6rem,7vw,5.5rem)] font-black leading-[1.02] tracking-[-0.03em]">
@@ -38,14 +39,20 @@ export const HeroSection = () => (
         ))}
       </h1>
 
-      <p
-        className="mt-9 max-w-[34rem] text-base leading-[1.5] text-muted-foreground opacity-0"
+      <div
+        className="mt-9 max-w-[34rem] opacity-0"
         style={{ animation: "fade-up 0.7s ease-out 0.55s forwards" }}
       >
-        Conversation memory behind 1.4M+ calls at Finosu. CUDA kernels at Google
-        exploreCSR. Seven engineers and a Stripe integration at Layout. CS &amp; Math at
-        Amherst College.
-      </p>
+        <p className="text-base lowercase leading-[1.5] text-muted-foreground">
+          conversation memory behind 1.4m+ calls at finosu. neural rendering at google
+          explorecsr. advanced 3d product integration at layout.
+        </p>
+
+        <div className="mt-5 flex flex-col gap-2.5 sm:max-w-[24rem]">
+          <EducationBadge school="Amherst College" detail="CS & Math, BA — May 2027" />
+          <EducationBadge school="AIT Budapest" detail="Computer Science — Study Abroad" />
+        </div>
+      </div>
 
       <div
         className="mt-10 flex items-center gap-8 opacity-0"
