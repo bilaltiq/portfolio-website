@@ -1,11 +1,12 @@
 import { FigurePlate } from "./FigurePlate";
+import { RoleRotator } from "./RoleRotator";
 
 const lines = [
   <>
     Hi! I'm <span className="text-brand">Bilal</span> —
   </>,
-  <>I teach machines</>,
-  <>to see.</>,
+  <>I build it, then</>,
+  <>I get it shipped.</>,
 ];
 
 export const HeroSection = () => (
@@ -34,15 +35,18 @@ export const HeroSection = () => (
         ))}
       </h1>
 
-      <p
-        className="mt-8 max-w-[34rem] text-base leading-[1.5] text-muted-foreground opacity-0"
+      <div
+        className="max-w-[34rem] opacity-0"
         style={{ animation: "fade-up 0.7s ease-out 0.55s forwards" }}
       >
-        Machine learning, visual computing, and the systems underneath —
-        <br className="hidden sm:block" /> from conversation memory behind 1.4M+ calls at Finosu
-        <br className="hidden sm:block" /> to CAD-to-sketch research with Google exploreCSR.
-        <br className="hidden sm:block" /> CS &amp; Math at Amherst College.
-      </p>
+        <RoleRotator />
+
+        <p className="mt-7 text-base leading-[1.5] text-muted-foreground">
+          Conversation memory behind 1.4M+ calls at Finosu. CUDA kernels at Google
+          exploreCSR. Seven engineers and a Stripe integration at Layout. CS &amp; Math
+          at Amherst College.
+        </p>
+      </div>
 
       <div
         className="mt-10 flex items-center gap-8 opacity-0"

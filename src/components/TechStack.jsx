@@ -53,7 +53,7 @@ export const TechStack = () => (
         Tech Stack
         <span className="mono-label">({stack.length})</span>
       </h2>
-      <span className="mono-label">Tools of the trade</span>
+      <span className="mono-label">What I reach for</span>
     </div>
 
     {/* Single-hairline grid: collapse the gap and let cell borders overlap */}

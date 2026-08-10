@@ -33,12 +33,12 @@ export const FigurePlate = () => {
         className="relative aspect-square w-full overflow-hidden rounded-[3px] border border-border bg-muted"
         style={{ "--mx": "50%", "--my": "50%" }}
       >
-        {/* Base plate: flattened, brand-tinted. Top-aligned because the source is a
-            2:3 portrait — a centred square crop would cut off the head. */}
+        {/* Base plate: flattened, brand-tinted. The source is pre-cropped square and
+            framed on the face, so it needs no object-position nudging. */}
         <img
           src={portrait}
           alt="Bilal Tariq"
-          className="absolute inset-0 h-full w-full object-cover object-top opacity-90 grayscale contrast-[1.15] transition-opacity duration-500"
+          className="absolute inset-0 h-full w-full object-cover opacity-90 grayscale contrast-[1.15] transition-opacity duration-500"
         />
         <div className="absolute inset-0 bg-brand/30 mix-blend-color" />
 
@@ -47,7 +47,7 @@ export const FigurePlate = () => {
           src={portrait}
           alt=""
           aria-hidden="true"
-          className="absolute inset-0 h-full w-full object-cover object-top transition-[mask-image] duration-300 ease-out"
+          className="absolute inset-0 h-full w-full object-cover transition-[mask-image] duration-300 ease-out"
           style={{ maskImage: mask, WebkitMaskImage: mask }}
         />
 

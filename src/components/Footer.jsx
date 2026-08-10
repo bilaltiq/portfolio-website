@@ -37,6 +37,12 @@ export const Footer = () => (
           </span>
         </a>
 
+        <p className="mt-5 max-w-[34rem] text-sm leading-[1.6] text-muted-foreground">
+          Building something at the seam of ML and product, or need someone who'll
+          write the model and then argue about the roadmap? I reply faster than my
+          builds.
+        </p>
+
         <div className="mt-12 grid grid-cols-2 gap-8 md:mt-16 md:grid-cols-4">
           {meta.map((item) => (
             <div key={item.label}>
