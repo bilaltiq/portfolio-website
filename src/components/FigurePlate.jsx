@@ -6,8 +6,8 @@ import portrait from "../assets/portrait.jpg";
    The face keeps the largest window. */
 const LIGHTS = [
   { home: { x: 49, y: 44 }, inner: 16, outer: 34 },
-  { home: { x: 46, y: 63 }, inner: 12, outer: 28 },
-  { home: { x: 61, y: 57 }, inner: 11, outer: 26 },
+  { home: { x: 48, y: 78 }, inner: 14, outer: 31 },
+  { home: { x: 73, y: 70 }, inner: 13, outer: 29 },
 ];
 
 /* Snappy while the pointer is driving, slow on the way home, so leaving the
