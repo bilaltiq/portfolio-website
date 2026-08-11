@@ -101,8 +101,10 @@ const Frame = ({ photo, index, onOpen, registerRef }) => {
         src={photo.src}
         alt={photo.title ?? ""}
         loading="lazy"
-        className="w-full transition-transform duration-[900ms] ease-out group-hover:scale-[1.03]"
+        className="photo-grade w-full transition-transform duration-[900ms] ease-out group-hover:scale-[1.03]"
       />
+
+      <span aria-hidden="true" className="photo-tint pointer-events-none absolute inset-0" />
 
       {/* Glare sweep */}
       <span

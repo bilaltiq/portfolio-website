@@ -41,6 +41,12 @@ const captions = {
 
 Photos without a caption just show their frame number.
 
+**Grading is applied by the site, not baked into the files.** Every photo gets
++10% saturation, then a warm tint under the light palette and a cooler one
+under dark — see `.photo-grade` and `.photo-tint` in `src/index.css`. So export
+these flat and neutral; a photo you've already warmed will come out doubly warm
+in light mode.
+
 **Size**: these ship as-is, with no image pipeline — downscale on export.
 Roughly 2000px on the long edge is plenty, and anything over ~500 KB per photo
 will slow the page down.
