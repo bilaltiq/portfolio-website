@@ -53,11 +53,19 @@ export const Lightbox = ({ photo, index, total, onClose, onStep }) => {
         onClick={(e) => e.stopPropagation()}
         className="container-site flex min-h-0 flex-1 items-center justify-center pb-4"
       >
-        <img
-          src={photo.src}
-          alt={photo.title ?? ""}
-          className="max-h-full max-w-full object-contain"
-        />
+        {/* Shrink-wraps the photo so the tint covers it and not the letterboxing.
+            The cap is in viewport units rather than a percentage: through two
+            nested flex containers a percentage max-height has nothing definite
+            to resolve against, and the photo overruns the chrome. 11rem is the
+            header and footer bars plus their padding. */}
+        <div className="relative max-h-[calc(100vh-11rem)] max-w-full">
+          <img
+            src={photo.src}
+            alt={photo.title ?? ""}
+            className="photo-grade block max-h-[calc(100vh-11rem)] max-w-full object-contain"
+          />
+          <span aria-hidden="true" className="photo-tint pointer-events-none absolute inset-0" />
+        </div>
       </div>
 
       <div

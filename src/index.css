@@ -240,6 +240,27 @@
   }
 }
 
+/* Photo grade. +10% saturation either way; warm and cosy under the light
+   palette, cooler under the dark one. Done in CSS rather than baking two
+   copies of every photo — the theme swap is then instant and costs no extra
+   download. */
+.photo-grade {
+  filter: saturate(1.1) contrast(1.02) brightness(1.02);
+}
+.dark .photo-grade {
+  filter: saturate(1.1) contrast(1.04) brightness(0.98) hue-rotate(-4deg);
+}
+
+/* Soft-light tint carries the temperature; the filter alone can't shift hue
+   without muddying saturation. */
+.photo-tint {
+  background-color: rgb(255 138 61 / 0.1);
+  mix-blend-mode: soft-light;
+}
+.dark .photo-tint {
+  background-color: rgb(86 138 226 / 0.3);
+}
+
 /* Hide the native cursor only where the custom one is actually drawn */
 @media (hover: hover) and (pointer: fine) {
   html.has-custom-cursor,
