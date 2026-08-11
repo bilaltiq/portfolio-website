@@ -138,9 +138,9 @@ export const Projects = () => {
     <MarkWatermark
       variant="outline"
       side="right"
-      size="112vmin"
-      top="-6%"
-      offset="-24%"
+      size="104vmin"
+      top="-24%"
+      offset="-20%"
       drift={120}
       strokeWidth={0.22}
       opacity="opacity-[0.45] dark:opacity-[0.4]"
