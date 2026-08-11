@@ -1,6 +1,6 @@
 import { useEffect, useRef } from "react";
 import { cn } from "@/lib/utils";
-import { MARK_VIEWBOX, MARK_PATH, MARK_DOT } from "./markPath";
+import { MARK_VIEWBOX, MARK_LOOP, MARK_RING } from "./markPath";
 
 /**
  * The loop mark, blown up and dropped behind a section at low opacity. It
@@ -77,29 +77,19 @@ export const MarkWatermark = ({
         )}
         style={{ width: size, height: size, [side]: offset, top }}
       >
-        {variant === "outline" ? (
-          <>
+        {[MARK_LOOP, MARK_RING].map((d, i) =>
+          variant === "outline" ? (
             <path
-              d={MARK_PATH}
+              key={i}
+              d={d}
               fill="none"
               stroke="currentColor"
               strokeWidth={strokeWidth}
               strokeLinejoin="round"
             />
-            <circle
-              cx={MARK_DOT.cx}
-              cy={MARK_DOT.cy}
-              r={MARK_DOT.r}
-              fill="none"
-              stroke="currentColor"
-              strokeWidth={strokeWidth}
-            />
-          </>
-        ) : (
-          <>
-            <path d={MARK_PATH} fill="currentColor" />
-            <circle cx={MARK_DOT.cx} cy={MARK_DOT.cy} r={MARK_DOT.r} fill="currentColor" />
-          </>
+          ) : (
+            <path key={i} d={d} fill="currentColor" fillRule="evenodd" />
+          )
         )}
       </svg>
     </div>
