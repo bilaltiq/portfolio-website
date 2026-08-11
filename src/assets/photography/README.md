@@ -8,9 +8,21 @@ and friends have no browser decoder, so there's nothing the site could do with
 one — it would just render as a broken image. `.heic` is out for the same
 reason: Safari can display it, most other browsers can't.
 
-Export to JPEG out of Lightroom / Capture One / Photos first. A file that isn't
-one of the supported extensions is simply ignored — it won't appear, and it
-won't raise an error either, so if a photo doesn't show up, check the extension.
+**If all you have is RAW**, run the importer — macOS decodes ARW natively
+through Image I/O, so no install is needed:
+
+    ./scripts/import-photos.sh ~/Pictures/some-shoot
+    ./scripts/import-photos.sh ~/Pictures/DSC01234.ARW
+
+It converts to JPEG, caps the long edge at 2000px, numbers each file so the
+order holds, continues from whatever is already here, and reports anything it
+couldn't decode instead of skipping it quietly. Failing that, Preview's
+File > Export, or Finder's right-click > Quick Actions > Convert Image, both
+do the same job by hand.
+
+A file that isn't one of the supported extensions is simply ignored — it won't
+appear, and it won't raise an error either, so if a photo doesn't show up,
+check the extension first.
 
 **Order** is by filename, so prefix them to control it:
 
