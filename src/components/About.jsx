@@ -1,4 +1,6 @@
+import { useState } from "react";
 import { Reveal } from "./Reveal";
+import { ShowMore } from "./ShowMore";
 
 const experience = [
   {
@@ -45,8 +47,14 @@ const experience = [
   },
 ];
 
-export const About = () => (
-  <section id="about" className="container-site pt-24 md:pt-32">
+const INITIAL = 2;
+
+export const About = () => {
+  const [expanded, setExpanded] = useState(false);
+  const shownJobs = expanded ? experience : experience.slice(0, INITIAL);
+
+  return (
+    <section id="about" className="container-site pt-24 md:pt-32">
     <div className="section-rule mb-10 md:mb-14">
       <h2 className="eyebrow flex items-baseline gap-3">
         about
@@ -146,7 +154,8 @@ export const About = () => (
         <span className="mono-label">2024 — 2026</span>
       </div>
 
-      {experience.map((job, i) => (
+      <div id="experience-list">
+      {shownJobs.map((job, i) => (
         <Reveal
           key={job.org}
           delay={i * 70}
@@ -175,6 +184,18 @@ export const About = () => (
           </ul>
         </Reveal>
       ))}
+      </div>
+
+      {experience.length > INITIAL && (
+        <ShowMore
+          expanded={expanded}
+          onToggle={() => setExpanded((open) => !open)}
+          controls="experience-list"
+          hidden={experience.length - INITIAL}
+          noun="roles"
+        />
+      )}
     </div>
-  </section>
-);
+    </section>
+  );
+};

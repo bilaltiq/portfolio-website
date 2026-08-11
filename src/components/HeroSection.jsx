@@ -1,5 +1,6 @@
 import { FigurePlate } from "./FigurePlate";
 import { EducationBadge } from "./EducationBadge";
+import { MarkWatermark } from "./MarkWatermark";
 
 const lines = [
   <>
@@ -16,8 +17,11 @@ const lines = [
 export const HeroSection = () => (
   <section
     id="top"
-    className="container-site grid items-center gap-12 pb-16 pt-28 md:min-h-[88vh] md:grid-cols-12 md:gap-10 md:pb-20 md:pt-36"
+    className="container-site relative grid items-center gap-12 pb-16 pt-28 md:min-h-[88vh] md:grid-cols-12 md:gap-10 md:pb-20 md:pt-36"
   >
+    {/* Fills the gap between the headline's ragged right edge and the plate */}
+    <MarkWatermark side="left" size="44vmin" top="2%" offset="40%" drift={80} />
+
     <div className="md:col-span-7">
       <p
         className="mono-label mb-6 opacity-0"
