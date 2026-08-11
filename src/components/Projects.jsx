@@ -1,4 +1,6 @@
+import { useState } from "react";
 import { Reveal } from "./Reveal";
+import { ShowMore } from "./ShowMore";
 import { MarkWatermark } from "./MarkWatermark";
 import cad2sketch from "../assets/cad2sketch.svg";
 import amr from "../assets/amr.svg";
@@ -125,8 +127,14 @@ const projects = [
   },
 ];
 
-export const Projects = () => (
-  <section id="work" className="container-site relative pt-24 md:pt-32">
+const INITIAL = 2;
+
+export const Projects = () => {
+  const [expanded, setExpanded] = useState(false);
+  const shown = expanded ? projects : projects.slice(0, INITIAL);
+
+  return (
+    <section id="work" className="container-site relative pt-24 md:pt-32">
     <MarkWatermark
       variant="outline"
       side="right"
@@ -146,8 +154,8 @@ export const Projects = () => (
       <span className="mono-label">2023 — present</span>
     </div>
 
-    <div className="grid gap-y-10 md:grid-cols-2 md:gap-x-5 md:gap-y-12">
-      {projects.map((project, i) => (
+    <div id="work-list" className="grid gap-y-10 md:grid-cols-2 md:gap-x-5 md:gap-y-12">
+      {shown.map((project, i) => (
         <Reveal key={project.title} delay={(i % 2) * 80}>
           <a
             href={project.url}
@@ -193,6 +201,16 @@ export const Projects = () => (
       ))}
     </div>
 
+    {projects.length > INITIAL && (
+      <ShowMore
+        expanded={expanded}
+        onToggle={() => setExpanded((open) => !open)}
+        controls="work-list"
+        hidden={projects.length - INITIAL}
+        noun="projects"
+      />
+    )}
+
     <Reveal className="mt-12 border-t border-border pt-6">
       <a
         href="https://github.com/bilaltiq"
@@ -203,5 +221,6 @@ export const Projects = () => (
         everything else on GitHub ↗
       </a>
     </Reveal>
-  </section>
-);
+    </section>
+  );
+};
