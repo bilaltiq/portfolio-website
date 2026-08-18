@@ -10,7 +10,7 @@ const lines = [
     touch of product<span className="text-brand">.</span>
   </>,
   <>
-    time in the room<span className="text-brand">.</span>
+    also love talking<span className="text-brand">.</span>
   </>,
 ];
 
