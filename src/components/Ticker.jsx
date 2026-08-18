@@ -1,13 +1,14 @@
 const items = [
+  "forward deployed",
+  "production llm",
+  "customer integrations",
+  "shadow-mode rollouts",
   "machine learning",
-  "visual computing",
   "distributed systems",
   "llm tool-calling",
   "computer vision",
   "cryptography",
-  "3d graphics",
   "full-stack",
-  "research",
 ];
 
 const Row = ({ hidden }) => (
