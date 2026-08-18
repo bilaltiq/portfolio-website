@@ -7,13 +7,10 @@ const lines = [
     eng<span className="text-brand">.</span>
   </>,
   <>
-    product<span className="text-brand">.</span>
+    touch of product<span className="text-brand">.</span>
   </>,
   <>
-    touch of design<span className="text-brand">.</span>
-  </>,
-  <>
-    deployed on-site<span className="text-brand">.</span>
+    finesse of communication<span className="text-brand">.</span>
   </>,
 ];
 
@@ -33,7 +30,7 @@ export const HeroSection = () => (
         bilal tariq — forward deployed, nyc
       </p>
 
-      <h1 className="text-[clamp(2.6rem,7vw,5.5rem)] font-black leading-[1.02] tracking-[-0.03em]">
+      <h1 className="text-[clamp(1.6rem,3.9vw,3.7rem)] font-black leading-[1.05] tracking-[-0.035em]">
         {lines.map((line, i) => (
           <div key={i} className="line-mask">
             <span
