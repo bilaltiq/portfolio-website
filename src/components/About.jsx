@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Reveal } from "./Reveal";
 import { ShowMore } from "./ShowMore";
+import { FieldNotes } from "./FieldNotes";
 
 const experience = [
   {
@@ -70,10 +71,11 @@ export const About = () => {
         </p>
         <p className="mt-6 max-w-[38rem] text-base leading-[1.6] text-muted-foreground">
           that's meant doing a bit of everything. i've written cuda kernels and i've
-          written specs. at finosu i built the conversation memory sitting behind
-          about 1.4 million calls. at layout i talked seven engineers into building a
-          3d design tool with me, then spent most of my time working out what not to
-          build.
+          written specs. most of the work at finosu was getting llm systems to hold up
+          inside twelve different lenders' environments, where the data is messy and
+          the people on the other end are real customers. at layout i talked seven
+          engineers into building a 3d design tool with me, then spent most of my time
+          working out what not to build.
         </p>
         <p className="mt-4 max-w-[38rem] text-base leading-[1.6] text-muted-foreground">
           i care how it looks too. that's the part people actually meet.
@@ -116,7 +118,7 @@ export const About = () => {
             <dd className="text-sm leading-relaxed">
               eng &amp; product
               <br />
-              <span className="text-muted-foreground">…and a touch of design</span>
+              <span className="text-muted-foreground">deployed alongside the customer</span>
             </dd>
           </div>
           <div>
@@ -143,6 +145,8 @@ export const About = () => {
         </dl>
       </Reveal>
     </div>
+
+    <FieldNotes />
 
     {/* Experience — an index, not a stack of cards */}
     <div className="mt-20 md:mt-28">

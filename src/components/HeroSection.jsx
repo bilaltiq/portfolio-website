@@ -12,6 +12,9 @@ const lines = [
   <>
     touch of design<span className="text-brand">.</span>
   </>,
+  <>
+    deployed on-site<span className="text-brand">.</span>
+  </>,
 ];
 
 export const HeroSection = () => (
@@ -27,7 +30,7 @@ export const HeroSection = () => (
         className="mono-label mb-6 opacity-0"
         style={{ animation: "fade-up 0.7s ease-out 0.1s forwards" }}
       >
-        bilal tariq — nyc
+        bilal tariq — forward deployed, nyc
       </p>
 
       <h1 className="text-[clamp(2.6rem,7vw,5.5rem)] font-black leading-[1.02] tracking-[-0.03em]">
@@ -48,8 +51,9 @@ export const HeroSection = () => (
         style={{ animation: "fade-up 0.7s ease-out 0.55s forwards" }}
       >
         <p className="text-base lowercase leading-[1.5] text-muted-foreground">
-          conversation memory behind 1.4m+ calls at finosu. neural rendering at google
-          explorecsr. advanced 3d product integration at layout.
+          i build things that go live inside someone else's stack. at finosu that was
+          llm voice and chat across 12 lenders, in front of 151.6k borrowers. before
+          that, cuda and graph networks at google explorecsr.
         </p>
 
         <div className="mt-5 flex flex-col gap-2.5 sm:max-w-[24rem]">
