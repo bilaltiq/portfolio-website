@@ -6,7 +6,7 @@ import { FieldNotes } from "./FieldNotes";
 const experience = [
   {
     org: "Finosu (YC S24)",
-    role: "Software Engineering Intern",
+    role: "Forward Deployed Engineer, Intern",
     place: "New York, NY",
     period: "Jun — Aug 2026",
     notes: [

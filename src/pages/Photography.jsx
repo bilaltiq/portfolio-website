@@ -181,8 +181,8 @@ export const Photography = () => {
           <div className="mt-8 grid gap-6 border-t border-border pt-6 md:grid-cols-12">
             <div className="md:col-span-6">
               <p className="text-base leading-[1.6] text-muted-foreground">
-                the other half of the design thing. mostly cities, and whatever light
-                i catch on the way somewhere.
+                off the clock. mostly cities, and whatever light i catch on the way
+                somewhere.
               </p>
               {/* Credit line. α and σ are Sony's and Sigma's own marks. */}
               <p className="mono-label mt-4">
